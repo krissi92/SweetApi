@@ -1,7 +1,7 @@
 package is.jberry.runners;
 
-import com.jberry.services.user.UserService;
-import com.jberry.services.user.UserServiceFactory;
+import com.jberry.dto;
+import com.jberry.services.user;
 
 public class TestRunner {
 
