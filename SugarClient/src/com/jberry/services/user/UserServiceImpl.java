@@ -22,11 +22,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean login(String username, String password) throws Exception {
 		// TODO Auto-generated method stub
-        String Url = "localhost:3000";
+        String Url = "http://localhost:3000";
         HttpClient client = new DefaultHttpClient();
-        HttpGet request = new HttpGet(url);
 
-        //request.addHeader =dadj; ATHATHATH
+        HttpGet request = new HttpGet(url);
 
         HttpResponse response = client.execute(request);
         System.out.println("\nSending 'GET' reguest to url:" + url);
