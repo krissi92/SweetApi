@@ -24,7 +24,6 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
         String Url = "http://localhost:3000";
         HttpClient client = new DefaultHttpClient();
-
         HttpGet request = new HttpGet(url);
 
         HttpResponse response = client.execute(request);
