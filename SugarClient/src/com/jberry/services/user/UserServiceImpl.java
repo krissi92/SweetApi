@@ -22,13 +22,13 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean login(String username, String password) throws Exception {
 		// TODO Auto-generated method stub
-        String Url = "http://localhost:3000";
+        /*String Url = "http://localhost:3000";
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
 
         HttpResponse response = client.execute(request);
         System.out.println("\nSending 'GET' reguest to url:" + url);
-        System.out.println("response code: " + response.getStatusLine().getStatusCode());
+        System.out.println("response code: " + response.getStatusLine().getStatusCode());*/
 		return false;
 	}
 
@@ -38,4 +38,12 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+    @Override
+    public boolean register(String username, String password, String email) {
+        return false;
+    }
+
+    public boolean isLoggedIn(String name){
+        return true; // user is always logged in .... always.
+    }
 }
