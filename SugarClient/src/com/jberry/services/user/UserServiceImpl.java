@@ -21,7 +21,7 @@ import com.jberry.dto.User;
 public class UserServiceImpl implements UserService {
 
 	@Override
-	public boolean login(String username, String password) throws Exception {
+	public boolean login(String userName, String password) throws Exception {
 		// TODO Auto-generated method stub
         User Admun = new User();
         if(Admun.userName == username && Admun.password == password)
@@ -50,7 +50,8 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    public boolean isLoggedIn(String name){
+    //returnes true if the given username is logged in.
+    public boolean isLoggedIn(String userName){
         return true; // user is always logged in .... always.
     }
 }
