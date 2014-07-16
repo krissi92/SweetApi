@@ -9,7 +9,7 @@ public class TestRunner {
 	public static void main(String[] args) {
 		UserService userService = UserServiceFactory.getUserService();
 
-        System.out.print("Hello mafakka");
+        System.out.print("Hello ma");
 
 	}
 
