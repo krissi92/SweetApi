@@ -34,9 +34,9 @@ public class UserServiceImpl implements UserService {
         HttpGet request = new HttpGet(url);
 
         HttpResponse response = client.execute(request);
-        System.out.println("\nSending 'GET' reguest to url:" + url);
+        System.out.println("\nSending 'GET' request to url:" + url);
         System.out.println("response code: " + response.getStatusLine().getStatusCode());*/
-		return false;
+		return true;
 	}
 
 	@Override
@@ -45,12 +45,13 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+    //registers the user and returns true if successful.
     @Override
     public boolean register(String username, String password, String email) {
         return false;
     }
 
-    //returnes true if the given username is logged in.
+    //returns true if the given username is logged in.
     public boolean isLoggedIn(String userName){
         return true; // user is always logged in .... always.
     }
