@@ -6,14 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="279e94c0-47f0-4af7-a057-bbf5431a9a37" name="Default" comment="" />
-=======
-    <list default="true" id="279e94c0-47f0-4af7-a057-bbf5431a9a37" name="Default" comment="">
+    <list default="true" id="279e94c0-47f0-4af7-a057-bbf5431a9a37" name="Default" comment="made a jar">
+      <change type="DELETED" beforePath="C:\Users\Krissi\Documents\GitHub\SweetApi\.idea\artifacts\SweetApi_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Krissi\Documents\GitHub\SweetApi\SugarClient\src\META-INF\MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Krissi\Documents\GitHub\SweetApi\out\artifacts\SweetApi_jar\SweetApi.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SweetApi.iml" afterPath="$PROJECT_DIR$/.idea/SweetApi.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java" afterPath="$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceImpl.java" afterPath="$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
     <ignored path="SweetApi.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,13 +45,8 @@
       <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="425">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -58,11 +55,7 @@
       <file leaf-file-name="UserService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
+            <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="306">
               <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
@@ -72,22 +65,10 @@
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="1020">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="936">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-=======
-            <state vertical-scroll-proportion="0.47402596" vertical-offset="320" max-vertical-offset="954">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
+            <state vertical-scroll-proportion="0.46378505" vertical-offset="45" max-vertical-offset="901">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1483#1484#0" expanded="true" />
-                <element signature="e#1511#1512#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,7 +77,7 @@
       <file leaf-file-name="FoodServiceImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="187">
               <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
@@ -106,11 +87,7 @@
       <file leaf-file-name="UserServiceFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="561">
               <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="23" selection-end-column="35" />
               <folding />
             </state>
@@ -120,9 +97,8 @@
       <file leaf-file-name="FoodServiceFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodServiceFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="493">
               <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
               <folding />
             </state>
           </provider>
@@ -131,13 +107,8 @@
       <file leaf-file-name="Food.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/dto/Food.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1105">
               <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
               <folding />
             </state>
           </provider>
@@ -146,33 +117,8 @@
       <file leaf-file-name="TestRunner.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/is/jberry/runners/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SweetApi_jar.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/artifacts/SweetApi_jar.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05875576" vertical-offset="0" max-vertical-offset="868">
-              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestRunner.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SugarClient/bin/is/jberry/runners/TestRunner.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="272">
-              <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -181,18 +127,8 @@
       <file leaf-file-name="FoodService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodService.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="221">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="204">
               <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
               <folding />
             </state>
           </provider>
@@ -213,24 +149,15 @@
       <list>
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/FoodService.java" />
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/dto/MockUser.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserService.java" />
-        <option value="$PROJECT_DIR$/SugarClient/src/is/jberry/runners/TestRunner.java" />
-        <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java" />
-        <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceImpl.java" />
-=======
         <option value="$PROJECT_DIR$/SugarClient/src/is/jberry/runners/TestRunner.java" />
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserService.java" />
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java" />
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodServiceFactory.java" />
-<<<<<<< HEAD
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-=======
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/dto/Food.java" />
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodServiceImpl.java" />
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodService.java" />
         <option value="$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceImpl.java" />
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -266,7 +193,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,7 +200,6 @@
               <option name="myItemId" value="SweetApi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-<<<<<<< HEAD
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -283,22 +208,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SweetApi" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-=======
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SweetApi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SweetApi" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SugarClient" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -313,10 +222,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SugarClient" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,6 +350,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,7 +367,7 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/httpcomponents-client-4.3.4-bin/httpcomponents-client-4.3.4/lib/httpmime-4.3.4.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/httpcomponents-client-4.3.4/lib/httpmime-4.3.4.jar!/" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="OverrideImplement.combined" value="true" />
@@ -667,10 +573,7 @@
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="MakeNoErrorCheck" enabled="false" />
-        <option name="Make" enabled="true" />
-      </method>
+      <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="Application" factoryName="Application" editBeforeRun="true">
       <option name="MAIN_CLASS_NAME" value="TestRunner" />
@@ -727,12 +630,16 @@
       <created>1405440134495</created>
       <updated>1405440134495</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="corrected a spelling mistake">
+      <created>1405523377280</created>
+      <updated>1405523377280</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1288" y="-449" width="1296" height="1040" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -744,25 +651,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32832617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2171875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32832617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2035139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5678092" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -784,7 +686,9 @@
     <MESSAGE value="added food stuff" />
     <MESSAGE value="fixed IntelliJ" />
     <MESSAGE value="added a function to user class and made a FoodService Factory and a Impl" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a function to user class and made a FoodService Factory and a Impl" />
+    <MESSAGE value="corrected a spelling mistake" />
+    <MESSAGE value="made a jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a jar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -796,25 +700,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="234">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="306">
@@ -829,8 +714,6 @@
           <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -889,8 +772,6 @@
           <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -949,8 +830,6 @@
           <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1009,8 +888,6 @@
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1077,8 +954,6 @@
           <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1128,8 +1003,6 @@
           <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1157,21 +1030,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SugarClient/bin/is/jberry/runners/TestRunner.class">
-<<<<<<< HEAD
-=======
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/dto/Food.java">
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-=======
     <entry file="file://$PROJECT_DIR$/SugarClient/src/is/jberry/runners/TestRunner.java">
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -1181,32 +1046,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="221">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-=======
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-=======
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="23" selection-end-column="35" />
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="306">
-=======
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodService.java">
-=======
     <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodServiceFactory.java">
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
           <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
@@ -1233,7 +1079,6 @@
     <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
@@ -1241,93 +1086,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodService.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-=======
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="23" selection-end-column="35" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-=======
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="425">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/dto/User.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.4510779" vertical-offset="875" max-vertical-offset="21780">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="1020">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46378505" vertical-offset="45" max-vertical-offset="901">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/user/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47402596" vertical-offset="320" max-vertical-offset="954">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/is/jberry/runners/TestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/SweetApi_jar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05875576" vertical-offset="0" max-vertical-offset="868">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-=======
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodServiceFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SugarClient/src/com/jberry/services/food/FoodServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.058441557" vertical-offset="0" max-vertical-offset="616">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
->>>>>>> a184f6d917450223623f5b7e50fe0ff59aee27fc
-          <folding />
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> 8e362f2e35ee38cd1b3ff2050b0e00092cc48bcb
   </component>
   <component name="masterDetails">
     <states>
@@ -1370,7 +1160,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>1.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1387,6 +1177,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
