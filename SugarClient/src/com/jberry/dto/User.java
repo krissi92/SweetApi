@@ -9,6 +9,6 @@ public class User {
     public String email = "a@a.is";
     public boolean admin = true;
     public boolean isLoggedIn = false; //mabbeh óðarfi.
-    public int Id;
+    public int Id = 1337;
 
 }
