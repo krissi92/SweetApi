@@ -1,10 +1,10 @@
 package com.jberry.services.user;
 
 import java.util.List;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+//import java.io.BufferedReader;
+//import java.io.InputStreamReader;
+//import java.util.ArrayList;
+//import java.util.List;
 
 //import org.apache.http.HttpResponse;
 //import org.apache.http.NameValuePair;
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
     //registers the user and returns true if successful.
     @Override
     public boolean register(String username, String password, String email) {
-        return false;
+        return true;
     }
 
     //returns true if the given username is logged in.
