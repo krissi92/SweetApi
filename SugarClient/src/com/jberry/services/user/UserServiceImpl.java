@@ -20,15 +20,14 @@ import com.jberry.dto.User;
 public class UserServiceImpl implements UserService {
 
 	@Override
-	public boolean login(String userName, String password) throws Exception {
+	public boolean login(String userName, String password) {
 		// Smá check.
         if(userName.equals("admin")){
             if (password.equals("admin")){
                 return true;
             }
-            else { return false; }
         }
-        else { return false; }
+        return false;
         /*String Url = "http://localhost:3000";
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
