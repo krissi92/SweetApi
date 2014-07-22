@@ -1,9 +1,12 @@
 package is.jberry.runners;
 
+<<<<<<< HEAD
 import com.jberry.dto.CalanderMeal;
 import com.jberry.dto.User;
 import com.jberry.services.calander.CalanderService;
 import com.jberry.services.calander.CalanderServiceFactory;
+=======
+>>>>>>> 9167273fbb4b14638650c20ee39e13bd32aa98ac
 import com.jberry.services.user.UserService;
 import com.jberry.services.user.UserServiceFactory;
 

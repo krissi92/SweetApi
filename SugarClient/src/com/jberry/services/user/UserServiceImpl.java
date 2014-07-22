@@ -1,10 +1,10 @@
 package com.jberry.services.user;
 
 import java.util.List;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+//import java.io.BufferedReader;
+//import java.io.InputStreamReader;
+//import java.util.ArrayList;
+//import java.util.List;
 
 //import org.apache.http.HttpResponse;
 //import org.apache.http.NameValuePair;
@@ -20,8 +20,14 @@ import com.jberry.dto.User;
 public class UserServiceImpl implements UserService {
 
 	@Override
-	public boolean login(String userName, String password) throws Exception {
-		// TODO Auto-generated method stub
+	public boolean login(String userName, String password) {
+		// Smá check.
+        if(userName.equals("admin")){
+            if (password.equals("admin")){
+                return true;
+            }
+        }
+        return false;
         /*String Url = "http://localhost:3000";
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
@@ -29,11 +35,14 @@ public class UserServiceImpl implements UserService {
         HttpResponse response = client.execute(request);
         System.out.println("\nSending 'GET' request to url:" + url);
         System.out.println("response code: " + response.getStatusLine().getStatusCode());*/
+<<<<<<< HEAD
         User admin = new User();
         if(admin.userName == userName && admin.password == password){
             return true;
         }
         return false;
+=======
+>>>>>>> 9167273fbb4b14638650c20ee39e13bd32aa98ac
 	}
 
 	@Override
@@ -45,7 +54,7 @@ public class UserServiceImpl implements UserService {
     //registers the user and returns true if successful.
     @Override
     public boolean register(String username, String password, String email) {
-        return false;
+        return true;
     }
 
     //returns true if the given username is logged in.
