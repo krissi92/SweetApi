@@ -1,7 +1,7 @@
 package com.jberry.dto;
 
 
-//impliments?
+//TODO:Breyta öllu í private.
 public class User {
     public String userName = "admin";
     public String password = "admin";

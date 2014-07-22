@@ -1,7 +1,27 @@
 package com.jberry.services.checkin;
 
-/**
- * Created by regnbogasulta on 22.7.2014.
- */
-public class CheckInServiceImpl {
+import com.jberry.dto.CheckIn;
+import com.jberry.services.food.FoodService;
+import com.jberry.services.food.FoodServiceFactory;
+
+public class CheckInServiceImpl implements CheckInService {
+
+    @Override
+    public int calculateInsulin(double ratio, String foodName, double bloodSugar, boolean exercise) {
+        CheckIn checkInstance = new CheckIn();
+        FoodService foodServ = FoodServiceFactory.getFoodService();
+        //get stuff from food
+        double carbs = foodServ.getCarbsFromFood(foodName);
+        double carbsTotal = foodServ.getCarbsTotalFromFood(foodName);
+        double unitsPerRatio = carbsTotal/ratio;
+        double bloodSugarCorrection = (bloodSugar - checkInstance.targetBloodSugar)/checkInstance.sensitivity;
+        float bloodSugarLeftInBlood = (float) (1.0 - (checkInstance.timeSinceLast * 0.25)) * checkInstance.lastTimeUnits; //active units
+
+        double units = (unitsPerRatio + bloodSugarCorrection) - bloodSugarLeftInBlood;
+        if (exercise){
+            units = units * 0.5;
+        }
+
+        return ((int) Math.round(units));
+    }
 }

@@ -1,6 +1,5 @@
 package is.jberry.runners;
 
-
 import com.jberry.dto.CalanderMeal;
 import com.jberry.dto.User;
 import com.jberry.services.calander.CalanderService;
