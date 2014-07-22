@@ -6,5 +6,5 @@ import com.jberry.dto.CalanderMeal;
 
 public interface CalanderService {
 
-    List<CalanderMeal>getMealsByDay() throws ParseException;
+    List<CalanderMeal>getMealsByDay();
 }
