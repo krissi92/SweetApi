@@ -1,19 +1,15 @@
 package is.jberry.runners;
 
 import com.jberry.dto.CalanderMeal;
-import com.jberry.dto.User;
-import com.jberry.services.calander.CalanderService;
-import com.jberry.services.calander.CalanderServiceFactory;
-
-import com.jberry.services.user.UserService;
-import com.jberry.services.user.UserServiceFactory;
+import com.jberry.services.calendar.CalendarService;
+import com.jberry.services.calendar.CalendarServiceFactory;
 
 import java.util.List;
 
 public class TestRunner {
 
 	public static void main(String[] args) throws Exception {
-        CalanderService calanderServer = CalanderServiceFactory.getCalanderService();
+        CalendarService calanderServer = CalendarServiceFactory.getCalanderService();
         List<CalanderMeal> list = calanderServer.getMealsByDay();
 
         for(int i = 0; i<list.size(); i++)
