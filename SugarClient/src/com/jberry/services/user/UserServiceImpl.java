@@ -29,7 +29,11 @@ public class UserServiceImpl implements UserService {
         HttpResponse response = client.execute(request);
         System.out.println("\nSending 'GET' request to url:" + url);
         System.out.println("response code: " + response.getStatusLine().getStatusCode());*/
-		return true;
+        User admin = new User();
+        if(admin.userName == userName && admin.password == password){
+            return true;
+        }
+        return false;
 	}
 
 	@Override
