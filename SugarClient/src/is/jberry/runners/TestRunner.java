@@ -3,28 +3,17 @@ package is.jberry.runners;
 import com.jberry.dto.CalanderMeal;
 import com.jberry.services.calendar.CalendarService;
 import com.jberry.services.calendar.CalendarServiceFactory;
+import com.jberry.services.checkin.CheckInService;
+import com.jberry.services.checkin.CheckInServiceFactory;
 
 import java.util.List;
 
 public class TestRunner {
 
 	public static void main(String[] args) throws Exception {
-        CalendarService calanderServer = CalendarServiceFactory.getCalanderService();
-        List<CalanderMeal> list = calanderServer.getMealsByDay();
-
-        for(int i = 0; i<list.size(); i++)
-        {
-            System.out.println("Name:" + list.get(i).mealName + ", time:" + list.get(i).timeOfMeal);
-        }
-
-		/*UserService userService = UserServiceFactory.getUserService();
-        boolean test1 = userService.login("admin", "admin");
-        if(test1 == true) {
-            System.out.print("success brah");
-        }
-        else {
-            System.out.print("failed brah");
-        }*/
+        CheckInService checker = CheckInServiceFactory.getCheckInService();
+        int vampire = checker.calculateInsulin(5.5, "Banana", 200, 5.5, true);
+        System.out.print("you need this amount of Blood " + vampire);
 	}
 
 }
