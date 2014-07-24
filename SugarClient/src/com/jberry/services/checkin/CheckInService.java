@@ -1,5 +1,7 @@
 package com.jberry.services.checkin;
 
+import java.util.Map;
+
 public interface CheckInService {
-    int calculateInsulin(double ratio, String foodName, int gramms, double bloodsuger, boolean hreyfing);
+    int calculateInsulin(double ratio, Map<String, Integer> foodMap, double bloodSugar, boolean exercise);
 }
