@@ -7,6 +7,6 @@ import java.util.Date;
 public class CalanderMeal {
     public String mealName;
     public int userId;
-    public String timeOfMeal;
+    public Long timeOfMeal;
 
 }

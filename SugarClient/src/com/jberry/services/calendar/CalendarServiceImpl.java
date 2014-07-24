@@ -11,24 +11,24 @@ import java.util.TimeZone;
 
 public class CalendarServiceImpl implements CalendarService {
 
-    public List<CalanderMeal>getMealsByDay() {
-        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
-        long unixSeconds = 1404342000;
+    public List<CalanderMeal>getMealsByDay(Long unixTimestamp) {
+        //SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+        long unixSeconds = unixTimestamp;
 
         List<CalanderMeal> mealList = new ArrayList<CalanderMeal>() {
         };
 
         for(int i = 0; i<=23; i++) {
-            unixSeconds += 3600;
             CalanderMeal temp = new CalanderMeal();
             temp.mealName = "BANANASALAT";
-            Date d = new Date(unixSeconds*1000L);
-            ft.setTimeZone(TimeZone.getTimeZone("GMT"));
-            temp.timeOfMeal = ft.format(d);
+            temp.timeOfMeal = unixSeconds;
             temp.userId = 1;
             mealList.add(i, temp);
+            unixSeconds += 3600;
 
         }
         return mealList;
     }
+
+
 }

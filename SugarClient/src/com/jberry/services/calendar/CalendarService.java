@@ -5,5 +5,5 @@ import com.jberry.dto.CalanderMeal;
 
 public interface CalendarService {
 
-    List<CalanderMeal>getMealsByDay();
+    List<CalanderMeal>getMealsByDay(Long unixTimestamp);
 }
