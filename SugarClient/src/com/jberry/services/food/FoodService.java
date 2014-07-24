@@ -4,6 +4,7 @@ import com.jberry.dto.Food;
 
 public interface FoodService {
     double getCarbsFromFood(String Food);
-    double getCarbsTotalFromFood(String Food);
+
     Food getFoodInformation();
+
 }

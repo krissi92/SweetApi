@@ -15,7 +15,6 @@ public class Food {
     public float cisFjölómettaðarfitusýrur;
     public float cisFjölómettaðarfitusn3langar;
     public float transFitusýrur;
-    public float Kolvetnialls;
     public float Sykrur;
     public float Viðbættursykur;
     public float Trefjaefni;

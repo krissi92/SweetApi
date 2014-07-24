@@ -3,16 +3,9 @@ package com.jberry.services.food;
 import com.jberry.dto.Food;
 
 public class FoodServiceImpl implements FoodService {
-
-
     @Override
     public double getCarbsFromFood(String Food) {
-        return 0;
-    }
-
-    @Override
-    public double getCarbsTotalFromFood(String Food) {
-        return 0;
+        return 10.9;
     }
 
     @Override

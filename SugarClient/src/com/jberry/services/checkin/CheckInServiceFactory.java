@@ -1,20 +1,17 @@
 package com.jberry.services.checkin;
 
-/**
- * Created by regnbogasulta on 22.7.2014.
- */
 public class CheckInServiceFactory {
     public static CheckInService getCheckInService() {
-        Class b = null;
+        Class c = null;
         try {
-            b = Class.forName("com.jberry.services.checkin.CheckInImpl");
+            c = Class.forName("com.jberry.services.checkin.CheckInServiceImpl");
         }
         catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         CheckInService checkInServiceInstance = null;
         try {
-            checkInServiceInstance = (CheckInService)b.newInstance();
+            checkInServiceInstance = (CheckInService)c.newInstance();
 
         }
         catch (InstantiationException e) {
