@@ -19,11 +19,11 @@ public class CalendarServiceImpl implements CalendarService {
         };
 
         for(int i = 0; i<=23; i++) {
-            CalanderMeal temp = new CalanderMeal();
-            temp.mealName = "BANANASALAT";
-            temp.timeOfMeal = unixSeconds;
-            temp.userId = 1;
-            mealList.add(i, temp);
+            CalanderMeal calmeal = new CalanderMeal();
+            calmeal.setMealName("BANANASALAT");
+            calmeal.setTimeOfMeal(unixSeconds);
+            calmeal.setUserId(1);
+            mealList.add(i, calmeal);
             unixSeconds += 3600;
 
         }

@@ -26,14 +26,18 @@ public class CheckInServiceImpl implements CheckInService {
         }
 
         double unitsPerRatio = totalCarbs/ratio;
-        double bloodSugarCorrection = (bloodSugar - checkInstance.targetBloodSugar)/checkInstance.sensitivity;
-        float bloodSugarLeftInBlood = (float) (1.0 - (checkInstance.timeSinceLast * 0.25)) * checkInstance.lastTimeUnits; //active units
+        double bloodSugarCorrection = (bloodSugar - checkInstance.getTargetBloodSugar())/checkInstance.getSensitivity();
+        float bloodSugarLeftInBlood = (float) (1.0 - (checkInstance.getTimeSinceLast() * 0.25)) * checkInstance.getLastTimeUnits(); //active units
 
         double units = (unitsPerRatio + bloodSugarCorrection) - bloodSugarLeftInBlood;
         if (exercise){
             units = units * 0.5;
         }
 
-        return ((int) Math.round(units));
+        int insulin = (int) Math.round(units);
+
+        checkInstance.setLastTimeUnits(insulin);
+
+        return insulin;
     }
 }
