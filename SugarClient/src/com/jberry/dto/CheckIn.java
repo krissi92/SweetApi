@@ -1,11 +1,11 @@
 package com.jberry.dto;
 
 public class CheckIn {
-    private double bloodSugar = 0;                 //Hvað er blóðsykurinn hár núna.
-    private final double targetBloodSugar = 6.5;   //target blodsykur, constant
-    private double sensitivity = 2.75;             //Reyknað útfrá þyngd notanda.
-    private int lastTimeUnits = 5;                 //hversu mikið af insúlíni þú sprautaðir sýðast.
-    private float timeSinceLast = 4;               //tími frá því síðasta checkin gerðist TODO: þarf að vera breytt.
+    private double bloodSugar;                      //Hvað er blóðsykurinn hár núna.
+    private final double targetBloodSugar = 6.5;    //target blodsykur, constant
+    private double sensitivity;                     //Reyknað útfrá þyngd notanda.
+    private int lastTimeUnits;                      //hversu mikið af insúlíni þú sprautaðir sýðast.
+    private float timeSinceLast;                    //tími frá því síðasta checkin gerðist TODO: þarf að vera breytt.
 
     //Setters
     public void setLastTimeUnits(int lastTimeUnits) {
