@@ -1,12 +1,12 @@
 package com.jberry.dto;
 
 public class User {
-    private int Id;
     private String userName;
     private String password;
     private String email;
     private boolean admin;
     private boolean isLoggedIn;
+    private int Id;
 
     //Constructor
     public User(String userName, String password, String email, boolean admin, boolean isLoggedIn, int id) {
@@ -15,7 +15,7 @@ public class User {
         this.email = "a@a.is";
         this.admin = true;
         this.isLoggedIn = false;
-        Id = 1337;
+        this.Id = 1337;
     }
 
     //Getters
