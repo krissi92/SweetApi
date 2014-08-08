@@ -37,8 +37,6 @@ public class FoodServiceImpl implements FoodService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println("foodItems Length: " + foodItems.length);
         if (foodItems.length > 1){
             //ætla gera ráð fyrir að það sé bara eitt item sem getur komið.
             return foodItems[0].getTotalCarbohydrates(); //TODO: þarf að returna bara einu ef það koma margar lausnir.
