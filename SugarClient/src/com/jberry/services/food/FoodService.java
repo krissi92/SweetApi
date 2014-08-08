@@ -2,9 +2,12 @@ package com.jberry.services.food;
 
 import com.jberry.dto.Food;
 
-public interface FoodService {
-    double getCarbsFromFood(String Food);
+import java.io.IOException;
+import java.util.ArrayList;
 
-    Food getFoodInformation();
+public interface FoodService {
+    ArrayList<String> getFoodTitle(String foodName);
+    double getCarbsFromFood(String Food);
+    Food[] getFoodInformation(String foodName) throws IOException;
 
 }

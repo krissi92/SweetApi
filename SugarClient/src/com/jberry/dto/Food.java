@@ -1,368 +1,386 @@
 package com.jberry.dto;
 
+import com.google.gson.annotations.SerializedName;
 
-//impliments?
 public class Food {
-    private int id;
-    private String Nafn;
-    private String Fæðuflokkur;
-    private String Name;
-    private int Aðalfl;
-    private int Undirfl;
-    private double Æturhluti;
-    private double Mettaðarfitusýrur;
-    private double cisEinómettaðarfitusýrur;
-    private double cisFjölómettaðarfitusýrur;
-    private double cisFjölómettaðarfitusn3langar;
-    private double transFitusýrur;
-    private double Sykrur;
-    private double Viðbættursykur;
-    private double Trefjaefni;
-    private double Steinefnialls;
-    private double AvítamínRJ;
-    private double Retinol;
-    private double EvítamínalfaTJ;
-    private double Níasínjafngildi;
-    private double Níasín;
-    private double Fólatalls;
-    private double Fosfór;
-    private double Selen;
-    private double cisFjölómettaðarfitusn3;
-    private double cisFjölómettaðarfitusn6;
-    private double Prótein;
-    private double Fita;
-    private double transfita;
-    private double Kólesteról;
-    private double Kolvetni;
-    private double Sykur;
-    private double Alkohól;
-    private double Vatn;
-    private double Avítamín;
-    private double Dvítamín;
-    private double Evítamín;
-    private double B1vítamín;
-    private double B2vítamín;
-    private double B6vítamín;
-    private double B12vítamín;
-    private double Cvítamín;
-    private double Kalk;
-    private double Magnesíum;
-    private double Járn;
-    private double Sink;
-    private double Natríum;
-    private int Kalíum;
-    private double Kopar;
-    private double Joð;
-    private double Betakarótín;
+    @SerializedName("_id")
+    private String id;
+    @SerializedName("Nafn")
+    private String nameIce;
+    @SerializedName("Name")
+    private String nameEng;
+    @SerializedName("Fæðuflokkur")
+    private String foodCategory;
+    @SerializedName("Aðalfl")
+    private int mainCategory;
+    @SerializedName("Undirfl")
+    private int subCategory;
+    @SerializedName("Ætur hluti")
+    private double edible;
+    @SerializedName("Prótein")
+    private double proteins;
+    @SerializedName("Fita")
+    private double fat;
+    @SerializedName("Mettaðar fitusýrur")
+    private double saturatedFat;
+    @SerializedName("cis-Einómettaðar fitusýrur")
+    private double cisMonounsaturatedFattyAcids;
+    @SerializedName("cis-Fjölómettaðar fitusýrur")
+    private double cisPolyunsaturatedFattyAcids;
+    @SerializedName("cis-Fjölómettaðar fitus. n-3 langar")
+    private double cisPolyunsaturatedFattyAcidsNeg3Long;
+    @SerializedName("trans-Fitusýrur")
+    private double transFattyAcids;
+    @SerializedName("Kólesteról")
+    private double cholesterol;
+    @SerializedName("Kolvetni, alls")
+    private double totalCarbohydrates;
+    @SerializedName("Sykrur")
+    private double sugars;
+    @SerializedName("Viðbættur sykur")
+    private double addedSugar;
+    @SerializedName("Trefjaefni")
+    private double fiber;
+    @SerializedName("Alkóhól")
+    private double alcohol;
+    @SerializedName("Steinefni, alls")
+    private double totalMinerals;
+    @SerializedName("Vatn")
+    private double water;
+    @SerializedName("A-vítamín, RJ")
+    private double vitaminA;
+    @SerializedName("Retinol")
+    private double retinol;
+    @SerializedName("Beta-karótín")
+    private double betaCarotene;
+    @SerializedName("D-vítamín")
+    private double vitaminD;
+    @SerializedName("E-vítamín, alfa-TJ")
+    private double vitaminE;
+    @SerializedName("B1-vítamín")
+    private double vitaminB1;
+    @SerializedName("B2-vítamín")
+    private double vitaminB2;
+    @SerializedName("Níasín-jafngildi")
+    private double niacinEquivalents;
+    @SerializedName("Níasín")
+    private double niacin;
+    @SerializedName("B6-vítamín")
+    private double vitaminB6;
+    @SerializedName("Fólat, alls")
+    private double totalFolate;
+    @SerializedName("B-12 vítamín")
+    private double vitaminB12;
+    @SerializedName("C-vítamín")
+    private double vitaminC;
+    @SerializedName("Kalk")
+    private double calcium;
+    @SerializedName("Fosfór")
+    private double phosphorus;
+    @SerializedName("Magnesíum")
+    private double magnesium;
+    @SerializedName("Natríum")
+    private double sodium;
+    @SerializedName("Kalíum")
+    private double potassium;
+    @SerializedName("Járn")
+    private double iron;
+    @SerializedName("Sink")
+    private double sink;
+    @SerializedName("Kopar")
+    private double copper;
+    @SerializedName("Joð")
+    private double iodine;
+    @SerializedName("Selen")
+    private double selenium;
+    @SerializedName("cis-Fjölómettaðar fitus. n-6")
+    private double cisPolyunsaturatedFattyAcidsNeg6;
+    @SerializedName("cis-Fjölómettaðar fitus. n-3")
+    private double cisPolyunsaturatedFattyAcidsNeg3;
 
-    //Getter
-    public int getId() {
+    //Getters
+    public String getId() {
         return id;
     }
-    public String getNafn() {
-        return Nafn;
+    public String getNameIce() {
+        return nameIce;
     }
-    public String getFæðuflokkur() {
-        return Fæðuflokkur;
+    public String getNameEng() {
+        return nameEng;
     }
-    public String getName() {
-        return Name;
+    public String getFoodCategory() {
+        return foodCategory;
     }
-    public int getAðalfl() {
-        return Aðalfl;
+    public int getMainCategory() {
+        return mainCategory;
     }
-    public int getUndirfl() {
-        return Undirfl;
+    public int getSubCategory() {
+        return subCategory;
     }
-    public double getÆturhluti() {
-        return Æturhluti;
+    public double getEdible() {
+        return edible;
     }
-    public double getMettaðarfitusýrur() {
-        return Mettaðarfitusýrur;
+    public double getProteins() {
+        return proteins;
     }
-    public double getCisEinómettaðarfitusýrur() {
-        return cisEinómettaðarfitusýrur;
+    public double getFat() {
+        return fat;
     }
-    public double getCisFjölómettaðarfitusýrur() {
-        return cisFjölómettaðarfitusýrur;
+    public double getSaturatedFat() {
+        return saturatedFat;
     }
-    public double getCisFjölómettaðarfitusn3langar() {
-        return cisFjölómettaðarfitusn3langar;
+    public double getCisMonounsaturatedFattyAcids() {
+        return cisMonounsaturatedFattyAcids;
     }
-    public double getTransFitusýrur() {
-        return transFitusýrur;
+    public double getCisPolyunsaturatedFattyAcids() {
+        return cisPolyunsaturatedFattyAcids;
     }
-    public double getSykrur() {
-        return Sykrur;
+    public double getCisPolyunsaturatedFattyAcidsNeg3Long() {
+        return cisPolyunsaturatedFattyAcidsNeg3Long;
     }
-    public double getViðbættursykur() {
-        return Viðbættursykur;
+    public double getTransFattyAcids() {
+        return transFattyAcids;
     }
-    public double getTrefjaefni() {
-        return Trefjaefni;
+    public double getCholesterol() {
+        return cholesterol;
     }
-    public double getSteinefnialls() {
-        return Steinefnialls;
+    public double getTotalCarbohydrates() {
+        return totalCarbohydrates;
     }
-    public double getAvítamínRJ() {
-        return AvítamínRJ;
+    public double getSugars() {
+        return sugars;
+    }
+    public double getAddedSugar() {
+        return addedSugar;
+    }
+    public double getFiber() {
+        return fiber;
+    }
+    public double getAlcohol() {
+        return alcohol;
+    }
+    public double getTotalMinerals() {
+        return totalMinerals;
+    }
+    public double getWater() {
+        return water;
+    }
+    public double getVitaminA() {
+        return vitaminA;
     }
     public double getRetinol() {
-        return Retinol;
+        return retinol;
     }
-    public double getEvítamínalfaTJ() {
-        return EvítamínalfaTJ;
+    public double getBetaCarotene() {
+        return betaCarotene;
     }
-    public double getNíasínjafngildi() {
-        return Níasínjafngildi;
+    public double getVitaminD() {
+        return vitaminD;
     }
-    public double getNíasín() {
-        return Níasín;
+    public double getVitaminE() {
+        return vitaminE;
     }
-    public double getFólatalls() {
-        return Fólatalls;
+    public double getVitaminB1() {
+        return vitaminB1;
     }
-    public double getFosfór() {
-        return Fosfór;
+    public double getVitaminB2() {
+        return vitaminB2;
     }
-    public double getSelen() {
-        return Selen;
+    public double getNiacinEquivalents() {
+        return niacinEquivalents;
     }
-    public double getCisFjölómettaðarfitusn3() {
-        return cisFjölómettaðarfitusn3;
+    public double getNiacin() {
+        return niacin;
     }
-    public double getCisFjölómettaðarfitusn6() {
-        return cisFjölómettaðarfitusn6;
+    public double getVitaminB6() {
+        return vitaminB6;
     }
-    public double getPrótein() {
-        return Prótein;
+    public double getTotalFolate() {
+        return totalFolate;
     }
-    public double getFita() {
-        return Fita;
+    public double getVitaminB12() {
+        return vitaminB12;
     }
-    public double getTransfita() {
-        return transfita;
+    public double getVitaminC() {
+        return vitaminC;
     }
-    public double getKólesteról() {
-        return Kólesteról;
+    public double getCalcium() {
+        return calcium;
     }
-    public double getKolvetni() {
-        return Kolvetni;
+    public double getPhosphorus() {
+        return phosphorus;
     }
-    public double getSykur() {
-        return Sykur;
+    public double getMagnesium() {
+        return magnesium;
     }
-    public double getAlkohól() {
-        return Alkohól;
+    public double getSodium() {
+        return sodium;
     }
-    public double getVatn() {
-        return Vatn;
+    public double getPotassium() {
+        return potassium;
     }
-    public double getAvítamín() {
-        return Avítamín;
-    }
-    public double getDvítamín() {
-        return Dvítamín;
-    }
-    public double getEvítamín() {
-        return Evítamín;
-    }
-    public double getB1vítamín() {
-        return B1vítamín;
-    }
-    public double getB2vítamín() {
-        return B2vítamín;
-    }
-    public double getB6vítamín() {
-        return B6vítamín;
-    }
-    public double getB12vítamín() {
-        return B12vítamín;
-    }
-    public double getCvítamín() {
-        return Cvítamín;
-    }
-    public double getKalk() {
-        return Kalk;
-    }
-    public double getMagnesíum() {
-        return Magnesíum;
-    }
-    public double getJárn() {
-        return Járn;
+    public double getIron() {
+        return iron;
     }
     public double getSink() {
-        return Sink;
+        return sink;
     }
-    public double getNatríum() {
-        return Natríum;
+    public double getCopper() {
+        return copper;
     }
-    public int getKalíum() {
-        return Kalíum;
+    public double getIodine() {
+        return iodine;
     }
-    public double getKopar() {
-        return Kopar;
+    public double getSelenium() {
+        return selenium;
     }
-    public double getJoð() {
-        return Joð;
+    public double getCisPolyunsaturatedFattyAcidsNeg6() {
+        return cisPolyunsaturatedFattyAcidsNeg6;
     }
-    public double getBetakarótín() {
-        return Betakarótín;
+    public double getCisPolyunsaturatedFattyAcidsNeg3() {
+        return cisPolyunsaturatedFattyAcidsNeg3;
     }
 
-    //Setter
-    public void setId(int id) {
+    //Setters
+    public void setId(String id) {
         this.id = id;
     }
-    public void setNafn(String nafn) {
-        Nafn = nafn;
+    public void setNameIce(String nameIce) {
+        this.nameIce = nameIce;
     }
-    public void setFæðuflokkur(String fæðuflokkur) {
-        Fæðuflokkur = fæðuflokkur;
+    public void setNameEng(String nameEng) {
+        this.nameEng = nameEng;
     }
-    public void setName(String name) {
-        Name = name;
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
     }
-    public void setAðalfl(int aðalfl) {
-        Aðalfl = aðalfl;
+    public void setMainCategory(int mainCategory) {
+        this.mainCategory = mainCategory;
     }
-    public void setUndirfl(int undirfl) {
-        Undirfl = undirfl;
+    public void setSubCategory(int subCategory) {
+        this.subCategory = subCategory;
     }
-    public void setÆturhluti(double æturhluti) {
-        Æturhluti = æturhluti;
+    public void setEdible(double edible) {
+        this.edible = edible;
     }
-    public void setMettaðarfitusýrur(double mettaðarfitusýrur) {
-        Mettaðarfitusýrur = mettaðarfitusýrur;
+    public void setProteins(double proteins) {
+        this.proteins = proteins;
     }
-    public void setCisEinómettaðarfitusýrur(double cisEinómettaðarfitusýrur) {
-        this.cisEinómettaðarfitusýrur = cisEinómettaðarfitusýrur;
+    public void setFat(double fat) {
+        this.fat = fat;
     }
-    public void setCisFjölómettaðarfitusýrur(double cisFjölómettaðarfitusýrur) {
-        this.cisFjölómettaðarfitusýrur = cisFjölómettaðarfitusýrur;
+    public void setSaturatedFat(double saturatedFat) {
+        this.saturatedFat = saturatedFat;
     }
-    public void setCisFjölómettaðarfitusn3langar(double cisFjölómettaðarfitusn3langar) {
-        this.cisFjölómettaðarfitusn3langar = cisFjölómettaðarfitusn3langar;
+    public void setCisMonounsaturatedFattyAcids(double cisMonounsaturatedFattyAcids) {
+        this.cisMonounsaturatedFattyAcids = cisMonounsaturatedFattyAcids;
     }
-    public void setTransFitusýrur(double transFitusýrur) {
-        this.transFitusýrur = transFitusýrur;
+    public void setCisPolyunsaturatedFattyAcids(double cisPolyunsaturatedFattyAcids) {
+        this.cisPolyunsaturatedFattyAcids = cisPolyunsaturatedFattyAcids;
     }
-    public void setSykrur(double sykrur) {
-        Sykrur = sykrur;
+    public void setCisPolyunsaturatedFattyAcidsNeg3Long(double cisPolyunsaturatedFattyAcidsNeg3Long) {
+        this.cisPolyunsaturatedFattyAcidsNeg3Long = cisPolyunsaturatedFattyAcidsNeg3Long;
     }
-    public void setViðbættursykur(double viðbættursykur) {
-        Viðbættursykur = viðbættursykur;
+    public void setTransFattyAcids(double transFattyAcids) {
+        this.transFattyAcids = transFattyAcids;
     }
-    public void setTrefjaefni(double trefjaefni) {
-        Trefjaefni = trefjaefni;
+    public void setCholesterol(double cholesterol) {
+        this.cholesterol = cholesterol;
     }
-    public void setSteinefnialls(double steinefnialls) {
-        Steinefnialls = steinefnialls;
+    public void setTotalCarbohydrates(double totalCarbohydrates) {
+        this.totalCarbohydrates = totalCarbohydrates;
     }
-    public void setAvítamínRJ(double avítamínRJ) {
-        AvítamínRJ = avítamínRJ;
+    public void setSugars(double sugars) {
+        this.sugars = sugars;
+    }
+    public void setAddedSugar(double addedSugar) {
+        this.addedSugar = addedSugar;
+    }
+    public void setFiber(double fiber) {
+        this.fiber = fiber;
+    }
+    public void setAlcohol(double alcohol) {
+        this.alcohol = alcohol;
+    }
+    public void setTotalMinerals(double totalMinerals) {
+        this.totalMinerals = totalMinerals;
+    }
+    public void setWater(double water) {
+        this.water = water;
+    }
+    public void setVitaminA(double vitaminA) {
+        this.vitaminA = vitaminA;
     }
     public void setRetinol(double retinol) {
-        Retinol = retinol;
+        this.retinol = retinol;
     }
-    public void setEvítamínalfaTJ(double evítamínalfaTJ) {
-        EvítamínalfaTJ = evítamínalfaTJ;
+    public void setBetaCarotene(double betaCarotene) {
+        this.betaCarotene = betaCarotene;
     }
-    public void setNíasínjafngildi(double níasínjafngildi) {
-        Níasínjafngildi = níasínjafngildi;
+    public void setVitaminD(double vitaminD) {
+        this.vitaminD = vitaminD;
     }
-    public void setNíasín(double níasín) {
-        Níasín = níasín;
+    public void setVitaminE(double vitaminE) {
+        this.vitaminE = vitaminE;
     }
-    public void setFólatalls(double fólatalls) {
-        Fólatalls = fólatalls;
+    public void setVitaminB1(double vitaminB1) {
+        this.vitaminB1 = vitaminB1;
     }
-    public void setFosfór(double fosfór) {
-        Fosfór = fosfór;
+    public void setVitaminB2(double vitaminB2) {
+        this.vitaminB2 = vitaminB2;
     }
-    public void setSelen(double selen) {
-        Selen = selen;
+    public void setNiacinEquivalents(double niacinEquivalents) {
+        this.niacinEquivalents = niacinEquivalents;
     }
-    public void setCisFjölómettaðarfitusn6(double cisFjölómettaðarfitusn6) {
-        this.cisFjölómettaðarfitusn6 = cisFjölómettaðarfitusn6;
+    public void setNiacin(double niacin) {
+        this.niacin = niacin;
     }
-    public void setCisFjölómettaðarfitusn3(double cisFjölómettaðarfitusn3) {
-        this.cisFjölómettaðarfitusn3 = cisFjölómettaðarfitusn3;
+    public void setVitaminB6(double vitaminB6) {
+        this.vitaminB6 = vitaminB6;
     }
-    public void setPrótein(double prótein) {
-        Prótein = prótein;
+    public void setTotalFolate(double totalFolate) {
+        this.totalFolate = totalFolate;
     }
-    public void setFita(double fita) {
-        Fita = fita;
+    public void setVitaminB12(double vitaminB12) {
+        this.vitaminB12 = vitaminB12;
     }
-    public void setTransfita(double transfita) {
-        this.transfita = transfita;
+    public void setVitaminC(double vitaminC) {
+        this.vitaminC = vitaminC;
     }
-    public void setKólesteról(double kólesteról) {
-        Kólesteról = kólesteról;
+    public void setCalcium(double calcium) {
+        this.calcium = calcium;
     }
-    public void setKolvetni(double kolvetni) {
-        Kolvetni = kolvetni;
+    public void setPhosphorus(double phosphorus) {
+        this.phosphorus = phosphorus;
     }
-    public void setSykur(double sykur) {
-        Sykur = sykur;
+    public void setMagnesium(double magnesium) {
+        this.magnesium = magnesium;
     }
-    public void setAlkohól(double alkohól) {
-        Alkohól = alkohól;
+    public void setSodium(double sodium) {
+        this.sodium = sodium;
     }
-    public void setVatn(double vatn) {
-        Vatn = vatn;
+    public void setPotassium(double potassium) {
+        this.potassium = potassium;
     }
-    public void setAvítamín(double avítamín) {
-        Avítamín = avítamín;
-    }
-    public void setDvítamín(double dvítamín) {
-        Dvítamín = dvítamín;
-    }
-    public void setEvítamín(double evítamín) {
-        Evítamín = evítamín;
-    }
-    public void setB1vítamín(double b1vítamín) {
-        B1vítamín = b1vítamín;
-    }
-    public void setB2vítamín(double b2vítamín) {
-        B2vítamín = b2vítamín;
-    }
-    public void setB6vítamín(double b6vítamín) {
-        B6vítamín = b6vítamín;
-    }
-    public void setB12vítamín(double b12vítamín) {
-        B12vítamín = b12vítamín;
-    }
-    public void setCvítamín(double cvítamín) {
-        Cvítamín = cvítamín;
-    }
-    public void setKalk(double kalk) {
-        Kalk = kalk;
-    }
-    public void setMagnesíum(double magnesíum) {
-        Magnesíum = magnesíum;
-    }
-    public void setJárn(double járn) {
-        Járn = járn;
+    public void setIron(double iron) {
+        this.iron = iron;
     }
     public void setSink(double sink) {
-        Sink = sink;
+        this.sink = sink;
     }
-    public void setNatríum(double natríum) {
-        Natríum = natríum;
+    public void setCopper(double copper) {
+        this.copper = copper;
     }
-    public void setKalíum(int kalíum) {
-        Kalíum = kalíum;
+    public void setIodine(double iodine) {
+        this.iodine = iodine;
     }
-    public void setKopar(double kopar) {
-        Kopar = kopar;
+    public void setSelenium(double selenium) {
+        this.selenium = selenium;
     }
-    public void setJoð(double joð) {
-        Joð = joð;
+    public void setCisPolyunsaturatedFattyAcidsNeg6(double cisPolyunsaturatedFattyAcidsNeg6) {
+        this.cisPolyunsaturatedFattyAcidsNeg6 = cisPolyunsaturatedFattyAcidsNeg6;
     }
-    public void setBetakarótín(double betakarótín) {
-        Betakarótín = betakarótín;
+    public void setCisPolyunsaturatedFattyAcidsNeg3(double cisPolyunsaturatedFattyAcidsNeg3) {
+        this.cisPolyunsaturatedFattyAcidsNeg3 = cisPolyunsaturatedFattyAcidsNeg3;
     }
-
 }
