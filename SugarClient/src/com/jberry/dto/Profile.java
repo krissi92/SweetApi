@@ -10,22 +10,24 @@ public class Profile {
     private String firstName;
     private String lastName;
     private long birthDay;
-    private float height;
-    private float weight;
+    private double height;
+    private double weight;
     private String trainerID;
+    private String diabeticID;
+    private String sex;
 
 
 
-    public float getWeight() {return weight;}
+    public double getWeight() {return weight;}
 
-    public void setWeight(float weight) {this.weight = weight;}
+    public void setWeight(double weight) {this.weight = weight;}
     public String getTrainerID() {return trainerID;}
 
     public void setTrainerID(String trainerID) {this.trainerID = trainerID;}
 
-    public float getHeight() {return height;}
+    public double getHeight() {return height;}
 
-    public void setHeight(float height) {this.height = height;}
+    public void setHeight(double height) {this.height = height;}
 
     public long getBirthDay() {return birthDay;}
 
@@ -50,4 +52,20 @@ public class Profile {
     public String getUserId() {return userId;}
 
     public void setUserId(String userId) {this.userId = userId;}
+
+    public String getDiabeticID() {
+        return diabeticID;
+    }
+
+    public void setDiabeticID(String diabeticID) {
+        this.diabeticID = diabeticID;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 }

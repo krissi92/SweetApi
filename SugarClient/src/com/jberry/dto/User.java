@@ -4,17 +4,15 @@ public class User {
     private String userName;
     private String password;
     private String email;
-    private boolean admin;
-    private boolean isLoggedIn;
+    private boolean isDiabetic;
     private int Id;
+
 
     //Constructor
     public User(String userName, String password, String email, boolean admin, boolean isLoggedIn, int id) {
         this.userName = "admin";
         this.password = "admin";
         this.email = "a@a.is";
-        this.admin = true;
-        this.isLoggedIn = false;
         this.Id = 1337;
     }
 
@@ -27,12 +25,6 @@ public class User {
     }
     public String getEmail() {
         return email;
-    }
-    public boolean isAdmin() {
-        return admin;
-    }
-    public boolean isLoggedIn() {
-        return isLoggedIn;
     }
     public int getId() {
         return Id;
@@ -48,13 +40,10 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
-    }
-    public void setLoggedIn(boolean isLoggedIn) {
-        this.isLoggedIn = isLoggedIn;
-    }
     public void setId(int id) {
         Id = id;
     }
+
+    public boolean isDiabetic() {return isDiabetic;}
+    public void setDiabetic(boolean isDiabetic) {this.isDiabetic = isDiabetic;}
 }

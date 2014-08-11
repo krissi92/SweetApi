@@ -22,7 +22,7 @@ public class CalendarServiceImpl implements CalendarService {
             CalanderMeal calmeal = new CalanderMeal();
             calmeal.setMealName("BANANASALAT");
             calmeal.setTimeOfMeal(unixSeconds);
-            calmeal.setUserId(1);
+            calmeal.setUserId("1");
             mealList.add(i, calmeal);
             unixSeconds += 3600;
 

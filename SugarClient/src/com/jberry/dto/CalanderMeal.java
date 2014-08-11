@@ -5,7 +5,7 @@ import java.util.Date;
 public class CalanderMeal {
     private String mealName;
     private Long timeOfMeal;
-    private int userId;
+    private String userId;
 
     //setters
     public void setMealName(String mealName) {
@@ -14,7 +14,7 @@ public class CalanderMeal {
     public void setTimeOfMeal(Long timeOfMeal) {
         this.timeOfMeal = timeOfMeal;
     }
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -25,7 +25,7 @@ public class CalanderMeal {
     public Long getTimeOfMeal() {
         return timeOfMeal;
     }
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
