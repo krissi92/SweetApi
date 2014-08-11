@@ -1,6 +1,8 @@
 package is.jberry.runners;
 
 
+import com.jberry.services.user.UserService;
+import com.jberry.services.user.UserServiceFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -18,7 +20,7 @@ import java.util.*;
 public class TestRunner {
 
 	public static void main(String[] args) throws Exception {
-        String url = "http://localhost:3000/ping";
+        /*String url = "http://localhost:3000/ping";
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
 
@@ -37,7 +39,10 @@ public class TestRunner {
 
         System.out.println("\nSending 'GET' request to url:" + url);
         System.out.println("response code: " + response.getStatusLine().getStatusCode());
-        System.out.println("response: " + output);
+        System.out.println("response: " + output);*/
+        UserService User = UserServiceFactory.getUserService();
+        User.register("oli222", "oli222","kaka222@kaka.is");
+
 	}
 
 }
