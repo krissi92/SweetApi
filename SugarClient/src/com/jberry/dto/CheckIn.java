@@ -5,7 +5,6 @@ public class CheckIn {
     private final double targetBloodSugar = 6.5;    //target blodsykur, constant
     private double sensitivity;                     //Reyknað útfrá þyngd notanda.
     private int lastTimeUnits;                      //hversu mikið af insúlíni þú sprautaðir sýðast.
-
     private long timeSinceLast;                     //tími frá því síðasta checkin gerðist TODO: þarf að vera breytt.
 
     //Setters

@@ -29,6 +29,7 @@ public class FoodServiceImpl implements FoodService {
         return results;
 
     }
+
     @Override
     public double getCarbsFromFood(String foodName) {
         Food[] foodItems = new Food[0];
@@ -37,9 +38,13 @@ public class FoodServiceImpl implements FoodService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //ef það er fleyra en eitt item sem kemur til greina þá er skiluð summa af Carbs.
         if (foodItems.length > 1){
-            //ætla gera ráð fyrir að það sé bara eitt item sem getur komið.
-            return foodItems[0].getTotalCarbohydrates(); //TODO: þarf að returna bara einu ef það koma margar lausnir.
+            double carbs = 0.0;
+            for (int i = 0; i < foodItems.length; i++){
+                carbs += foodItems[i].getTotalCarbohydrates();
+            }
+            return carbs;
         }
         else { return foodItems[0].getTotalCarbohydrates(); }
     }
