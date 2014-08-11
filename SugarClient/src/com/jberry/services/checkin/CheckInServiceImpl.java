@@ -1,25 +1,27 @@
 package com.jberry.services.checkin;
 
 import com.jberry.dto.CheckIn;
+import com.jberry.dto.FoodTO;
 import com.jberry.services.food.FoodService;
 import com.jberry.services.food.FoodServiceFactory;
+import com.jberry.services.foodto.FoodTOService;
+import com.jberry.services.foodto.FoodTOServiceFactory;
 
 import java.util.Map;
 
 public class CheckInServiceImpl implements CheckInService {
-
     @Override
-    public int calculateInsulin(double ratio, Map<String, Integer> foodMap, double bloodSugar, boolean exercise) {
+    public int calculateInsulin(double ratio, FoodTO[] foodMap, double bloodSugar, boolean exercise) {
         CheckIn checkInstance = new CheckIn();
         FoodService foodServ = FoodServiceFactory.getFoodService();
-        //get stuff from food
+
         double totalCarbs = 0.0;
 
-        for (Map.Entry<String, Integer> entry : foodMap.entrySet()) {
-            String foodName = entry.getKey();
+        for (int i = 0;i < foodMap.length; i++) {
+            String foodName = foodMap[i].getFoodName();
             double carbs = foodServ.getCarbsFromFood(foodName);
 
-            Integer grams = entry.getValue();
+            double grams = foodMap[i].getGrams();
             carbs = (carbs/100) * grams;
 
             totalCarbs = totalCarbs + carbs;

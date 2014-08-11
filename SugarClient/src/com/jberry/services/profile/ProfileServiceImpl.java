@@ -36,7 +36,7 @@ public class ProfileServiceImpl implements ProfileService {
             e.printStackTrace();
         }
         Profile getProfile = new Profile();
-        
+
 
         return null;
     }
