@@ -17,14 +17,14 @@ public class CheckInServiceImpl implements CheckInService {
 
         double totalCarbs = 0.0;
 
-        for (int i = 0;i < foodMap.length; i++) {
+        for (int i = 0; i < foodMap.length; i++) {
             String foodName = foodMap[i].getFoodName();
             double carbs = foodServ.getCarbsFromFood(foodName);
 
             double grams = foodMap[i].getGrams();
             carbs = (carbs/100) * grams;
 
-            totalCarbs = totalCarbs + carbs;
+            totalCarbs += carbs;
         }
 
         double unitsPerRatio = totalCarbs/ratio;
