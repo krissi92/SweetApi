@@ -1,32 +1,21 @@
 package is.jberry.runners;
 
 
-<<<<<<< HEAD
+
 import com.jberry.services.user.UserService;
 import com.jberry.services.user.UserServiceFactory;
-=======
+
 import com.jberry.dto.Food;
 import com.jberry.services.food.FoodService;
 import com.jberry.services.food.FoodServiceFactory;
->>>>>>> 05e25c3766e77b56f6aef6c8631ae1fe671cbb06
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.*;
 
 
 public class TestRunner {
 
 	public static void main(String[] args) throws Exception {
-<<<<<<< HEAD
+
         /*String url = "http://localhost:3000/ping";
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
@@ -50,7 +39,7 @@ public class TestRunner {
         UserService User = UserServiceFactory.getUserService();
         User.register("oli222", "oli222","kaka222@kaka.is");
 
-=======
+
         FoodService Feeder = FoodServiceFactory.getFoodService();
 
         Food[] itimm = Feeder.getFoodInformation("bacon");
@@ -78,7 +67,7 @@ public class TestRunner {
         System.out.println(itimm3[0].getAddedSugar());
         System.out.println(itimm3[0].getAlcohol());
         System.out.println(itimm3[0].getId());
->>>>>>> 05e25c3766e77b56f6aef6c8631ae1fe671cbb06
+
 	}
 
 }
