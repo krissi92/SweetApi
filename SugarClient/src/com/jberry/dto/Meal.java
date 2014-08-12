@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class Meal {
     private int Meald;
-    public HashMap<String, Integer> Ingredients; //TODO: make private
+    //public HashMap<String, Integer> Ingredients; //TODO: make not a map
+    public FoodTO[] Ingredients;
     private String MealName;
     //ALLS  hluti
     private double PróteinAlls;
@@ -30,9 +31,9 @@ public class Meal {
     public int getMeald() {
         return Meald;
     }
-    public HashMap<String, Integer> getIngredients() {
+    /*public HashMap<String, Integer> getIngredients() {
         return Ingredients;
-    }
+    }*/
     public String getMealName() {
         return MealName;
     }
@@ -92,9 +93,9 @@ public class Meal {
     public void setMeald(int meald) {
         Meald = meald;
     }
-    public void setIngredients(HashMap<String, Integer> ingredients) {
+    /*public void setIngredients(HashMap<String, Integer> ingredients) {
         Ingredients = ingredients;
-    }
+    }*/
     public void setMealName(String mealName) {
         MealName = mealName;
     }

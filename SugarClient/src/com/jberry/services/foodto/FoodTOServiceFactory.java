@@ -4,7 +4,7 @@ public class FoodTOServiceFactory {
     public static FoodTOService getFoodTOService() {
         Class c = null;
         try {
-            c = Class.forName("com.jberry.services.food.FoodTOServiceImpl");
+            c = Class.forName("com.jberry.services.foodto.FoodTOServiceImpl");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

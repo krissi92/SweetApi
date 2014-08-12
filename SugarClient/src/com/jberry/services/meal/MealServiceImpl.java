@@ -1,7 +1,9 @@
 package com.jberry.services.meal;
 
 import com.jberry.dto.Food;
+import com.jberry.dto.FoodTO;
 import com.jberry.dto.Meal;
+import com.jberry.services.foodto.FoodTOServiceFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,11 +21,12 @@ public class MealServiceImpl implements MealService{
         //BananaSalat.Ingredients = new Hashtable();
         BananaSalat.setMealName("BANANASALAT");
 
-
-        BananaSalat.Ingredients = new HashMap<String, Integer>();
-        BananaSalat.Ingredients.put("BANANI", 10);
-        BananaSalat.Ingredients.put("EPLI", 5);
-        BananaSalat.Ingredients.put("MANGO", 2);
+        BananaSalat.Ingredients[0].setFoodName("Banana");
+        BananaSalat.Ingredients[0].setGrams(10);
+        BananaSalat.Ingredients[1].setFoodName("Apple");
+        BananaSalat.Ingredients[1].setGrams(5);
+        BananaSalat.Ingredients[2].setFoodName("Mango");
+        BananaSalat.Ingredients[2].setGrams(2);
 
         BananaSalat.setMeald(1);
         //Alls shittið

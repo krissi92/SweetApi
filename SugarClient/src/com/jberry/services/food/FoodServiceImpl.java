@@ -23,11 +23,10 @@ public class FoodServiceImpl implements FoodService {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < foodItems.length; i++){
+        for (int i = 0; i < foodItems.length - 1; i++){
             results.add(foodItems[i].getNameEng());
         }
         return results;
-
     }
 
     @Override
@@ -39,14 +38,11 @@ public class FoodServiceImpl implements FoodService {
             e.printStackTrace();
         }
         //ef það er fleyra en eitt item sem kemur til greina þá er skiluð summa af Carbs.
-        if (foodItems.length > 1){
-            double carbs = 0.0;
-            for (int i = 0; i < foodItems.length; i++){
-                carbs += foodItems[i].getTotalCarbohydrates();
-            }
-            return carbs;
+        double carbs = 0.0;
+        for (int i = 0; i < foodItems.length - 1; i++){
+            carbs += foodItems[i].getTotalCarbohydrates();
         }
-        else { return foodItems[0].getTotalCarbohydrates(); }
+        return carbs;
     }
 
     @Override

@@ -7,15 +7,6 @@ public class User {
     private boolean isDiabetic;
     private int Id;
 
-
-    //Constructor
-    public User(String userName, String password, String email, boolean admin, boolean isLoggedIn, int id) {
-        this.userName = "admin";
-        this.password = "admin";
-        this.email = "a@a.is";
-        this.Id = 1337;
-    }
-
     //Getters
     public String getUserName() {
         return userName;
