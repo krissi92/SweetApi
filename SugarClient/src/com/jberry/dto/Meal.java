@@ -5,10 +5,9 @@ import java.util.Map;
 
 public class Meal {
     private int Meald;
-    //public HashMap<String, Integer> Ingredients; //TODO: make not a map
-    public FoodTO[] Ingredients;
+    private FoodTO[] Ingredients;
     private String MealName;
-    //ALLS  hluti
+    //ALLS  hetti
     private double PróteinAlls;
     private double FitaAlls;
     private double MettaðarfitusýrurAlls;
@@ -26,6 +25,17 @@ public class Meal {
     private double B12vítamínAlls;
     private double CvítamínAlls;
     private double KalkAlls;
+
+
+    public FoodTO[] getIngredients() {
+        return Ingredients;
+    }
+
+    public void setIngredients(FoodTO[] ingredients) {
+        Ingredients = ingredients;
+    }
+
+
 
     //Getters
     public int getMeald() {

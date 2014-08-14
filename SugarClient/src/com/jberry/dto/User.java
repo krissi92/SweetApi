@@ -7,6 +7,16 @@ public class User {
     private boolean isDiabetic;
     private int Id;
 
+    //Made the class Singleton.
+    private User(){ }
+    private static User usr;
+    public static User getTheUser(){
+        if (usr == null){
+            usr = new User();
+        }
+        return usr;
+    }
+
     //Getters
     public String getUserName() {
         return userName;

@@ -12,7 +12,6 @@ import java.util.TimeZone;
 public class CalendarServiceImpl implements CalendarService {
 
     public List<CalanderMeal>getMealsByDay(Long unixTimestamp) {
-        //SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
         long unixSeconds = unixTimestamp;
 
         List<CalanderMeal> mealList = new ArrayList<CalanderMeal>() {

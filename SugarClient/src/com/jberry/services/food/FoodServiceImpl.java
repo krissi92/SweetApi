@@ -2,10 +2,12 @@ package com.jberry.services.food;
 
 import com.google.gson.Gson;
 import com.jberry.dto.Food;
+import com.jberry.dto.User;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -49,7 +51,7 @@ public class FoodServiceImpl implements FoodService {
     public Food[] getFoodInformation(String foodName) throws IOException {
         String url = "http://localhost:3000/api/food/getByName/" + foodName;
 
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
 
         HttpResponse response = client.execute(request);
@@ -66,5 +68,10 @@ public class FoodServiceImpl implements FoodService {
         Gson jesus = new Gson();
 
         return jesus.fromJson(output,Food[].class);
+    }
+
+    public String getUserNameTest(){
+        User kalli = User.getTheUser();
+        return kalli.getUserName();
     }
 }

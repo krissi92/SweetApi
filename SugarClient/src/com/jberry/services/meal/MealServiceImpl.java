@@ -21,12 +21,16 @@ public class MealServiceImpl implements MealService{
         //BananaSalat.Ingredients = new Hashtable();
         BananaSalat.setMealName("BANANASALAT");
 
-        BananaSalat.Ingredients[0].setFoodName("Banana");
-        BananaSalat.Ingredients[0].setGrams(10);
-        BananaSalat.Ingredients[1].setFoodName("Apple");
-        BananaSalat.Ingredients[1].setGrams(5);
-        BananaSalat.Ingredients[2].setFoodName("Mango");
-        BananaSalat.Ingredients[2].setGrams(2);
+        FoodTO[] idk = new FoodTO[3];
+
+        idk[0].setFoodName("Banana");
+        idk[0].setGrams(10);
+        idk[1].setFoodName("Apple");
+        idk[1].setGrams(5);
+        idk[2].setFoodName("Mango");
+        idk[2].setGrams(2);
+
+        BananaSalat.setIngredients(idk);
 
         BananaSalat.setMeald(1);
         //Alls shittið

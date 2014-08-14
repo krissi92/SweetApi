@@ -2,6 +2,7 @@ package is.jberry.runners;
 
 import com.jberry.dto.FoodTO;
 import com.jberry.dto.Insulin;
+import com.jberry.dto.User;
 import com.jberry.services.insulin.InsulinService;
 import com.jberry.services.insulin.InsulinServiceFactory;
 import com.jberry.services.user.UserService;
@@ -15,7 +16,7 @@ import java.util.*;
 
 public class TestRunner {
 	public static void main(String[] args) throws Exception {
-        InsulinService ins = InsulinServiceFactory.getInsulinService();
+        /*InsulinService ins = InsulinServiceFactory.getInsulinService();
         FoodService fsv = FoodServiceFactory.getFoodService();
 
         System.out.println(fsv.getCarbsFromFood("ba"));
@@ -30,7 +31,12 @@ public class TestRunner {
         foodItems[1].setGrams(11);
 
 
-        ins.calculateInsulin(System.currentTimeMillis()/1000,foodItems,20,true);
+        ins.calculateInsulin(System.currentTimeMillis()/1000,foodItems,20,true);*/
+
+        User nonni = User.getTheUser();
+        FoodService FS = FoodServiceFactory.getFoodService();
+        nonni.setUserName("nonni");
+        System.out.println(FS.getUserNameTest());
 
 	}
 }
