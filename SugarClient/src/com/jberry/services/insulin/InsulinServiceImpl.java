@@ -7,6 +7,7 @@ import com.jberry.dto.Insulin;
 import com.jberry.dto.User;
 import com.jberry.services.food.FoodService;
 import com.jberry.services.food.FoodServiceFactory;
+import com.jberry.services.tools.ToolService;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -27,6 +28,7 @@ public class InsulinServiceImpl implements InsulinService {
     @Override
     public double calculateInsulin(long timeStamp, ArrayList<FoodTO> foodMap, double bloodSugar, boolean exercise) throws IOException{
         Insulin insulinInstance = new Insulin();
+        ToolService tService = new ToolService();
         String url = "https://localhoast:3000/api/calculateInsulin";//TODO: Make a legit http url
 
         insulinInstance.setTimeStamp(timeStamp);
@@ -38,7 +40,7 @@ public class InsulinServiceImpl implements InsulinService {
 
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost(url);
-        post.setHeader("Authorization", "Basic " + userEncoded());
+        post.setHeader("Authorization", "Basic " + tService.userEncoded());
         post.setHeader("Content-type", "application/json");
         post.setEntity(new StringEntity(ans));
 
@@ -66,13 +68,6 @@ public class InsulinServiceImpl implements InsulinService {
     private String makeJson(Insulin ins){
         Gson jesus = new Gson();
         return jesus.toJson(ins);
-    }
-
-    private String userEncoded(){ //TODO: Make a HTTPtools class so I do not have to repeat myself.
-        User notandi = User.getTheUser();
-        Base64 b64 = new Base64();
-        String usr = notandi.getUserName() + ":" + notandi.getPassword();
-        return b64.encodeAsString(usr.getBytes());
     }
 
     private double sumObjectList(ArrayList<FoodTO> foodItems){

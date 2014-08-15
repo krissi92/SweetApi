@@ -17,7 +17,7 @@ import java.util.*;
 
 public class TestRunner {
 	public static void main(String[] args) throws Exception {
-/*        InsulinService ins = InsulinServiceFactory.getInsulinService();
+        InsulinService ins = InsulinServiceFactory.getInsulinService();
         FoodService fsv = FoodServiceFactory.getFoodService();
 
         System.out.println(fsv.getFoodInformation("ba"));
@@ -27,9 +27,8 @@ public class TestRunner {
         foodItems.add(new FoodTO("apple", 120));
         foodItems.add(new FoodTO("mango", 222));
 
-
         ins.calculateInsulin(System.currentTimeMillis() / 1000, foodItems, 20, true);
-*/
+
         Base64 b64 = new Base64();
         String usr =  "jesus:jesus";
         System.out.println("encoding: " + b64.encodeAsString(usr.getBytes()));
