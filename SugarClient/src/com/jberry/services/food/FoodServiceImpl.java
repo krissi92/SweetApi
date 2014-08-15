@@ -2,22 +2,21 @@ package com.jberry.services.food;
 
 import com.google.gson.Gson;
 import com.jberry.dto.Food;
-import com.jberry.dto.User;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class FoodServiceImpl implements FoodService {
     @Override
     public ArrayList<String> getFoodTitle(String foodName){
-        Food[] foodItems = new Food[0];
+        ArrayList<Food> foodItems = new ArrayList<Food>();
         ArrayList<String> results = new ArrayList<String>();
         try {
             foodItems = getFoodInformation(foodName);
@@ -25,15 +24,15 @@ public class FoodServiceImpl implements FoodService {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < foodItems.length - 1; i++){
-            results.add(foodItems[i].getNameEng());
+        for (Food food : foodItems){
+            results.add(food.getNameEng());
         }
         return results;
     }
 
     @Override
     public double getCarbsFromFood(String foodName) {
-        Food[] foodItems = new Food[0];
+        ArrayList<Food> foodItems = new ArrayList<Food>();
         try {
             foodItems = getFoodInformation(foodName);
         } catch (IOException e) {
@@ -41,14 +40,14 @@ public class FoodServiceImpl implements FoodService {
         }
         //ef það er fleyra en eitt item sem kemur til greina þá er skiluð summa af Carbs.
         double carbs = 0.0;
-        for (int i = 0; i < foodItems.length - 1; i++){
-            carbs += foodItems[i].getTotalCarbohydrates();
+        for (Food food : foodItems){
+            carbs += food.getTotalCarbohydrates();
         }
         return carbs;
     }
 
     @Override
-    public Food[] getFoodInformation(String foodName) throws IOException {
+    public ArrayList<Food> getFoodInformation(String foodName) throws IOException {
         String url = "http://localhost:3000/api/food/getByName/" + foodName;
 
         HttpClient client = HttpClientBuilder.create().build();
@@ -66,12 +65,6 @@ public class FoodServiceImpl implements FoodService {
         output = builder.toString();
 
         Gson jesus = new Gson();
-
-        return jesus.fromJson(output,Food[].class);
-    }
-
-    public String getUserNameTest(){
-        User kalli = User.getTheUser();
-        return kalli.getUserName();
+        return new ArrayList<Food>(Arrays.asList(jesus.fromJson(output,Food[].class)));
     }
 }

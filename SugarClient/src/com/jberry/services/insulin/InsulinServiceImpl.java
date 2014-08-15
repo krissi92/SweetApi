@@ -1,6 +1,7 @@
 package com.jberry.services.insulin;
 
 import com.google.gson.Gson;
+import com.jberry.dto.Food;
 import com.jberry.dto.FoodTO;
 import com.jberry.dto.Insulin;
 import com.jberry.dto.User;
@@ -24,11 +25,10 @@ import java.util.List;
 
 public class InsulinServiceImpl implements InsulinService {
     @Override
-    public double calculateInsulin(long timeStamp, FoodTO[] foodMap, double bloodSugar, boolean exercise) throws IOException{
+    public double calculateInsulin(long timeStamp, ArrayList<FoodTO> foodMap, double bloodSugar, boolean exercise) throws IOException{
         Insulin insulinInstance = new Insulin();
-        String url = "https://";//TODO: Make a legit http url
+        String url = "https://localhoast:3000/api/calculateInsulin";//TODO: Make a legit http url
 
-        insulinInstance.setRatio(getCorrectRatio("Admin")); //TODO: change Admin to a correct userID
         insulinInstance.setTimeStamp(timeStamp);
         insulinInstance.setTotalcarbs(sumObjectList(foodMap));
         insulinInstance.setBloodsugar(bloodSugar);
@@ -46,26 +46,7 @@ public class InsulinServiceImpl implements InsulinService {
         response = client.execute(post);
 
         System.out.println("Response Code : "+ response.getStatusLine().getStatusCode());
-
-        //void fall(double ratio, double totalcarbs, double bloodsugar, boolean excersise);
-
-        //svo er restinn gerð serverside.
-
-        /*
-        double unitsPerRatio = totalCarbs/ratio;
-        double bloodSugarCorrection = (bloodSugar - checkInstance.getTargetBloodSugar())/checkInstance.getSensitivity();
-        float bloodSugarLeftInBlood = (float) (1.0 - (checkInstance.getTimeSinceLast() * 0.25)) * checkInstance.getLastTimeUnits(); //active units
-
-        double units = (unitsPerRatio + bloodSugarCorrection) - bloodSugarLeftInBlood;
-        if (exercise){
-            units = units * 0.5;
-        }
-
-        int insulin = (int) Math.round(units);
-
-        checkInstance.setLastTimeUnits(insulin);
-
-        return insulin;*/
+        //getReader() for body of request
         return 55;
     }
 
@@ -87,24 +68,21 @@ public class InsulinServiceImpl implements InsulinService {
         return jesus.toJson(ins);
     }
 
-    private String userEncoded(){
+    private String userEncoded(){ //TODO: Make a HTTPtools class so I do not have to repeat myself.
         User notandi = User.getTheUser();
         Base64 b64 = new Base64();
         String usr = notandi.getUserName() + ":" + notandi.getPassword();
         return b64.encodeAsString(usr.getBytes());
     }
 
-    private double sumObjectList(FoodTO[] foods){
+    private double sumObjectList(ArrayList<FoodTO> foodItems){
         FoodService foodServ = FoodServiceFactory.getFoodService();
 
         double totalCarbs = 0.0;
-        for (int i = 0; i < foods.length - 1; i++) {
-            String foodName = foods[i].getFoodName();
-            double carbs = foodServ.getCarbsFromFood(foodName);
-
-            double grams = foods[i].getGrams();
+        for (FoodTO foods : foodItems){
+            double carbs = foodServ.getCarbsFromFood(foods.getFoodName());
+            double grams = foods.getGrams();
             carbs = (carbs/100) * grams;
-
             totalCarbs += carbs;
         }
         return totalCarbs;

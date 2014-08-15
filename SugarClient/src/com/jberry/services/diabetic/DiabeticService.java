@@ -2,14 +2,11 @@ package com.jberry.services.diabetic;
 
 import com.jberry.dto.Diabetic;
 
-/**
- * Created by Krissi on 6.8.2014.
- */
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
 public interface DiabeticService {
 
-    Diabetic getDiabeticInfo(String diabeticId);
-    Diabetic postDiabeticInfo(Diabetic object);
-
-    Diabetic getRatio(String diabeticId);
-    Diabetic postRatio(Double morning, Double noon, Double evening);
+    Diabetic getDiabeticInfo(String userId)throws IOException;
+    boolean postDiabeticInfo(Diabetic DiabeticUsr, String userId) throws UnsupportedEncodingException;
 }

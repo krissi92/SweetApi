@@ -1,7 +1,6 @@
 package com.jberry.dto;
 
 public class Insulin {
-    private double ratio;
     private double insulinSensitivity;
     private long timeStamp;
     private double totalcarbs;
@@ -29,9 +28,6 @@ public class Insulin {
     public void setLastDoseTime(long lastDoseTime) {
         this.lastDoseTime = lastDoseTime;
     }
-    public void setRatio(double ratio) {
-        this.ratio = ratio;
-    }
     public void setInsulinSensitivity(double insulinSensitivity) {
         this.insulinSensitivity = insulinSensitivity;
     }
@@ -54,9 +50,6 @@ public class Insulin {
     }
     public double getLastDoseAmount() {
         return lastDoseAmount;
-    }
-    public double getRatio() {
-        return ratio;
     }
     public double getInsulinSensitivity() {
         return insulinSensitivity;

@@ -11,32 +11,30 @@ import com.jberry.services.user.UserServiceFactory;
 import com.jberry.dto.Food;
 import com.jberry.services.food.FoodService;
 import com.jberry.services.food.FoodServiceFactory;
+import org.apache.commons.codec.binary.Base64;
 
 import java.util.*;
 
 public class TestRunner {
 	public static void main(String[] args) throws Exception {
-        /*InsulinService ins = InsulinServiceFactory.getInsulinService();
+/*        InsulinService ins = InsulinServiceFactory.getInsulinService();
         FoodService fsv = FoodServiceFactory.getFoodService();
 
-        System.out.println(fsv.getCarbsFromFood("ba"));
+        System.out.println(fsv.getFoodInformation("ba"));
 
-        FoodTO[] foodItems = new FoodTO[2];
-
-        foodItems[0] = new FoodTO();
-        foodItems[0].setFoodName("banana");
-        foodItems[0].setGrams(22);
-        foodItems[1] = new FoodTO();
-        foodItems[1].setFoodName("epli");
-        foodItems[1].setGrams(11);
+        ArrayList<FoodTO> foodItems = new ArrayList<FoodTO>();
+        foodItems.add(new FoodTO("Banana",100));
+        foodItems.add(new FoodTO("apple", 120));
+        foodItems.add(new FoodTO("mango", 222));
 
 
-        ins.calculateInsulin(System.currentTimeMillis()/1000,foodItems,20,true);*/
+        ins.calculateInsulin(System.currentTimeMillis() / 1000, foodItems, 20, true);
+*/
+        Base64 b64 = new Base64();
+        String usr =  "jesus:jesus";
+        System.out.println("encoding: " + b64.encodeAsString(usr.getBytes()));
 
-        User nonni = User.getTheUser();
-        FoodService FS = FoodServiceFactory.getFoodService();
-        nonni.setUserName("nonni");
-        System.out.println(FS.getUserNameTest());
+
 
 	}
 }

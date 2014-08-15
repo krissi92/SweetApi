@@ -8,6 +8,5 @@ import java.util.ArrayList;
 public interface FoodService {
     ArrayList<String> getFoodTitle(String foodName);
     double getCarbsFromFood(String Food);
-    Food[] getFoodInformation(String foodName) throws IOException;
-    String getUserNameTest();
+    ArrayList<Food> getFoodInformation(String foodName) throws IOException;
 }
