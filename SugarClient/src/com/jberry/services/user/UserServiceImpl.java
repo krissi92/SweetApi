@@ -19,6 +19,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
@@ -54,30 +55,14 @@ public class UserServiceImpl implements UserService {
         User user = User.getTheUser();
         user.setEmail(email);
         user.setPassword(password);
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://" + toolService.url() + ":3000/api/userinfo";
 
-        return true;
-    }
-
-    //registers the user and returns true if successful.
-    @Override
-    public boolean register(String username, String password, String email) throws IOException {//TODO:Depricated?
-
-        String Url = "http://10.0.2.2:3000/sweet/register";
         HttpClient client = HttpClientBuilder.create().build();
-        HttpPost httppost = new HttpPost(Url);
+        HttpGet request = new HttpGet(url);
+        request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
-        List<NameValuePair> params = new LinkedList<NameValuePair>();
-        params.add(new BasicNameValuePair("name", username));
-        params.add(new BasicNameValuePair("email", email));
-        params.add(new BasicNameValuePair("password", password));
 
-        httppost.setEntity(new UrlEncodedFormEntity(params,"UTF-8"));
-
-        HttpResponse response = client.execute(httppost);
-        if(response.getStatusLine().getStatusCode() != 302)
-        {
-            return false;
-        }
         return true;
     }
 }
