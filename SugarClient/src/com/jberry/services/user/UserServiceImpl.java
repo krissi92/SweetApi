@@ -1,6 +1,8 @@
 package com.jberry.services.user;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 //import java.util.List;
 
 
+import com.google.gson.Gson;
 import com.jberry.dto.User;
 
 import com.jberry.services.tools.ToolService;
@@ -51,7 +54,7 @@ public class UserServiceImpl implements UserService {
         return true;
 	}
 
-    private boolean initUser(String email, String password){
+    private boolean initUser(String email, String password) throws IOException {
         User user = User.getTheUser();
         user.setEmail(email);
         user.setPassword(password);
@@ -62,6 +65,26 @@ public class UserServiceImpl implements UserService {
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
+        HttpResponse response = client.execute(request);
+        if (response.getStatusLine().getStatusCode() != 200){ return false; }
+
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader((response.getEntity().getContent())));
+
+        StringBuilder builder = new StringBuilder();
+        String output;
+        while ((output = br.readLine()) != null) {
+            builder.append(output);
+        }
+        output = builder.toString();
+
+        System.out.println(output);
+
+        Gson jesus = new Gson();
+        User usr = jesus.fromJson(output ,User.class);
+
+        user.setId(usr.getId());
+        user.setUserName(usr.getUserName());
 
         return true;
     }

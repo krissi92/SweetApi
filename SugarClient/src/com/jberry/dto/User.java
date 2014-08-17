@@ -1,7 +1,9 @@
 package com.jberry.dto;
 
+import com.google.gson.annotations.SerializedName;
+
 public class User {
-    private String Id;
+    private String id;
     private String userName;
     private String password;
     private String email;
@@ -27,7 +29,7 @@ public class User {
         return email;
     }
     public String getId() {
-        return Id;
+        return id;
     }
 
     //Setters
@@ -41,6 +43,6 @@ public class User {
         this.email = email;
     }
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 }

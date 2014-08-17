@@ -21,14 +21,16 @@ import java.util.*;
 public class TestRunner {
 	public static void main(String[] args) throws Exception {
         User daUser = User.getTheUser();
-        daUser.setId("53f0e8bdc3bbbe140af47590");
+        /*daUser.setId("53f0e8bdc3bbbe140af47590");
         daUser.setUserName("yoloswag");
         daUser.setPassword("yoloswag");
-        daUser.setEmail("yolo@swag.com");
+        daUser.setEmail("yolo@swag.com");*/
 
         UserService usr = UserServiceFactory.getUserService();
 
-        usr.login(daUser.getEmail(), daUser.getPassword());
+        if (usr.login("kalli@kalli.is", "kalli")){
+            System.out.println("YAY!");
+        }
 /*
         InsulinService ins = InsulinServiceFactory.getInsulinService();
         FoodService fsv = FoodServiceFactory.getFoodService();
@@ -45,13 +47,17 @@ public class TestRunner {
         Profile profile = new Profile();
         ProfileService profileService = ProfileServiceFactory.getProfileService();
         profile = profileService.getUserProfile(daUser.getId());
-        System.out.println(profile.getBirthDay());
+        System.out.println(profile.getUserName());
 
         profile.setSex("KK");
 
         profileService.postUpdatedProfile(profile);
 */
-        DiabeticService diabeticService = DiabeticServiceFactory.getDiabeticService();
+        System.out.println("usr id: " + daUser.getId());
+        System.out.println("usr name: " + daUser.getUserName());
+        System.out.println("usr password: " + daUser.getPassword());
+        System.out.println("usr email: " + daUser.getEmail());
+        /*DiabeticService diabeticService = DiabeticServiceFactory.getDiabeticService();
         Diabetic D = diabeticService.getDiabeticInfo("53f0e8bdc3bbbe140af47590");
         D.setLastDoseAmount(100);
         D.setLastDoseTime(1408305598);
@@ -62,7 +68,7 @@ public class TestRunner {
 
         Base64 b64 = new Base64();
         String notandi =  "jesus:jesus";
-        System.out.println("encoding: " + b64.encodeAsString(notandi.getBytes()));
+        System.out.println("encoding: " + b64.encodeAsString(notandi.getBytes()));*/
 
 	}
 }
