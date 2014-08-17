@@ -27,7 +27,7 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public Profile getUserProfile(String userId) throws IOException {
         ToolService toolService = ToolServiceFactory.getToolService();
-        String url = "http://localhost:3000/api/profile";
+        String url = "http://" + toolService.url() + ":3000/api/profile";
 
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
@@ -53,7 +53,7 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public boolean postUpdatedProfile(Profile user) throws IOException {
         ToolService toolService = ToolServiceFactory.getToolService();
-        String url = "http://localhost:3000/api/profile/update";
+        String url = "http://" + toolService.url() + ":3000/api/profile/update";
 
         Gson jesus = new Gson();
         String jsonObject = jesus.toJson(user);

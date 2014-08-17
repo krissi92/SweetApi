@@ -1,6 +1,8 @@
 package is.jberry.runners;
 
 import com.jberry.dto.*;
+import com.jberry.services.diabetic.DiabeticService;
+import com.jberry.services.diabetic.DiabeticServiceFactory;
 import com.jberry.services.insulin.InsulinService;
 import com.jberry.services.insulin.InsulinServiceFactory;
 import com.jberry.services.profile.ProfileService;
@@ -49,6 +51,13 @@ public class TestRunner {
 
         profileService.postUpdatedProfile(profile);
 
+        DiabeticService diabeticService = DiabeticServiceFactory.getDiabeticService();
+        Diabetic D = diabeticService.getDiabeticInfo("53f0d8834374ebf140097a89");
+        D.setNoonRatio(50.5);
+        diabeticService.postDiabeticInfo(D);
+
+        Diabetic B = diabeticService.getDiabeticInfo("53f0d8834374ebf140097a89");
+        System.out.println("Shanghigh Noon " + B.getNoonRatio());
 
         Base64 b64 = new Base64();
         String notandi =  "jesus:jesus";

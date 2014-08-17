@@ -12,4 +12,7 @@ public class ToolService {
         String usr = notandi.getEmail() + ":" + notandi.getPassword();
         return b64.encodeAsString(usr.getBytes());
     }
+    public String url(){
+        return "localhost";
+    }
 }

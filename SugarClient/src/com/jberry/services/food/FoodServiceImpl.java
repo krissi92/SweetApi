@@ -50,8 +50,8 @@ public class FoodServiceImpl implements FoodService {
 
     @Override
     public ArrayList<Food> getFoodInformation(String foodName) throws IOException {
-        String url = "http://localhost:3000/api/food/getByName/" + foodName;
         ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://" + toolService.url() + ":3000/api/food/getByName/" + foodName;
 
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);

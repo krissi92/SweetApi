@@ -3,7 +3,6 @@ package com.jberry.services.meal;
 import com.jberry.dto.Food;
 import com.jberry.dto.FoodTO;
 import com.jberry.dto.Meal;
-import com.jberry.services.foodto.FoodTOServiceFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;

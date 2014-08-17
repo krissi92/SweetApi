@@ -4,7 +4,7 @@ public class DiabeticServiceFactory {
     public static DiabeticService getDiabeticService() {
         Class c = null;
         try {
-            c = Class.forName("com.jberry.services.diabetic.DiabeticService");
+            c = Class.forName("com.jberry.services.diabetic.DiabeticServiceImpl");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

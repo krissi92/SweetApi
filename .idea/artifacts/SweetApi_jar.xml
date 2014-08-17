@@ -3,7 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/SweetApi_jar</output-path>
     <root id="archive" name="SweetApi.jar">
       <element id="module-output" name="SweetApi" />
-      <element id="library" level="project" name="commons-codec-1.6" />
       <element id="extracted-dir" path="$PROJECT_DIR$/httpcomponents-client-4.3.4/lib/httpclient-cache-4.3.4.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/httpcomponents-client-4.3.4/lib/httpclient-4.3.4.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/httpcomponents-client-4.3.4/lib/fluent-hc-4.3.4.jar" path-in-jar="/" />

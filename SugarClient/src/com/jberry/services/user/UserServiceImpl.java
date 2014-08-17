@@ -15,12 +15,9 @@ import com.jberry.dto.User;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.ParseException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -29,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean login(String email, String password) throws IOException{
 
-        String Url = "http://localhost:3000/api/login";
+        String Url = "http://10.0.2.2:3000/api/login";
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost request = new HttpPost(Url);
         List<NameValuePair> params = new LinkedList<NameValuePair>();
@@ -58,7 +55,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean register(String username, String password, String email) throws IOException {//TODO:Depricated?
 
-        String Url = "http://localhost:3000/sweet/register";
+        String Url = "http://10.0.2.2:3000/sweet/register";
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost httppost = new HttpPost(Url);
 

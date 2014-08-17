@@ -33,7 +33,7 @@ public class InsulinServiceImpl implements InsulinService {
     public double calculateInsulin(long timeStamp, ArrayList<FoodTO> foodMap, double bloodSugar, boolean exercise) throws IOException{
         Insulin insulinInstance = new Insulin();
         ToolService tService = new ToolService();
-        String url = "http://localhost:3000/api/calculateInsuline";//TODO: Make a legit http url
+        String url = "http://" + tService.url() + ":3000/api/calculateInsuline";//TODO: Make a legit http url
 
         insulinInstance.setTimeStamp(timeStamp);
         insulinInstance.setTotalCarbs(sumObjectList(foodMap));//TODO:Mebbeh round
@@ -61,22 +61,7 @@ public class InsulinServiceImpl implements InsulinService {
             builder.append(output);
         }
         output = builder.toString();
-
-        System.out.println("Response Code: " + response.getStatusLine().getStatusCode());
         return Double.parseDouble(output);
-    }
-
-    public double getCorrectRatio(String UserID) throws IOException{//TODO: Mjög líklega óðarfi.
-        double ratio = 13.37;
-        String url = "http://localhost:3000/api/insulin/getCorrectRatio/" + UserID;
-
-        HttpClient client = HttpClientBuilder.create().build();
-        HttpGet request = new HttpGet(url);
-
-        HttpResponse response = client.execute(request);
-        System.out.println(response.getEntity().getContent());
-
-        return ratio;//TODO: return ratio.
     }
 
     private String makeJson(Insulin ins){

@@ -8,5 +8,5 @@ import java.io.UnsupportedEncodingException;
 public interface DiabeticService {
 
     Diabetic getDiabeticInfo(String userId)throws IOException;
-    boolean postDiabeticInfo(Diabetic DiabeticUsr, String userId) throws IOException;
+    boolean postDiabeticInfo(Diabetic DiabeticUsr) throws IOException;
 }
