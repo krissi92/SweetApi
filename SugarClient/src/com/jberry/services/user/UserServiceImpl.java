@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 import com.jberry.dto.User;
 
+import com.jberry.services.tools.ToolService;
+import com.jberry.services.tools.ToolServiceFactory;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -25,8 +27,8 @@ import org.apache.http.message.BasicNameValuePair;
 public class UserServiceImpl implements UserService {
 	@Override
 	public boolean login(String email, String password) throws IOException{
-
-        String Url = "http://localhost:3000/api/login";
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String Url = "http://" + toolService.url() + ":3000/api/login";
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost request = new HttpPost(Url);
         List<NameValuePair> params = new LinkedList<NameValuePair>();
@@ -42,14 +44,19 @@ public class UserServiceImpl implements UserService {
         if(response.getStatusLine().getStatusCode() != 302){
             return false;
         }
+        if (!initUser(email, password)){
+            return false;
+        }
         return true;
 	}
 
-	@Override
-	public List<User> getUsers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    private boolean initUser(String email, String password){
+        User user = User.getTheUser();
+        user.setEmail(email);
+        user.setPassword(password);
+
+        return true;
+    }
 
     //registers the user and returns true if successful.
     @Override
@@ -72,10 +79,5 @@ public class UserServiceImpl implements UserService {
             return false;
         }
         return true;
-    }
-
-    //returns true if the given username is logged in.
-    public boolean isLoggedIn(String userName){
-        return true; // user is always logged in .... always.
     }
 }
