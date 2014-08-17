@@ -9,6 +9,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.io.IOException;
@@ -24,7 +25,7 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public Profile getUserProfile(String userId) {
 
-        HttpClient httpClient = new DefaultHttpClient();
+        HttpClient httpClient = HttpClientBuilder.create().build();
         HttpGet httpget = new HttpGet("http://localhost:3000/api/diabeticProfile");
         httpget.addHeader("user._iD", userId);
         HttpResponse response;
@@ -53,7 +54,7 @@ public class ProfileServiceImpl implements ProfileService {
         StringEntity params = null;
         try {
 
-            HttpClient httpClient = new DefaultHttpClient();
+            HttpClient httpClient = HttpClientBuilder.create().build();
             HttpPut putReq = new HttpPut("http://localhost:3000/api/profile/update");
             params = new StringEntity(profile.toString());
             putReq.setEntity(params);

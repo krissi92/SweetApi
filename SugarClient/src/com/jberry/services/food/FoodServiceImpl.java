@@ -2,6 +2,8 @@ package com.jberry.services.food;
 
 import com.google.gson.Gson;
 import com.jberry.dto.Food;
+import com.jberry.services.tools.ToolService;
+import com.jberry.services.tools.ToolServiceFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -49,9 +51,11 @@ public class FoodServiceImpl implements FoodService {
     @Override
     public ArrayList<Food> getFoodInformation(String foodName) throws IOException {
         String url = "http://localhost:3000/api/food/getByName/" + foodName;
+        ToolService toolService = ToolServiceFactory.getToolService();
 
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
+        request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
         HttpResponse response = client.execute(request);
         BufferedReader br = new BufferedReader(
@@ -65,6 +69,10 @@ public class FoodServiceImpl implements FoodService {
         output = builder.toString();
 
         Gson jesus = new Gson();
-        return new ArrayList<Food>(Arrays.asList(jesus.fromJson(output,Food[].class)));
+
+        Food[] fud = jesus.fromJson(output ,Food[].class);
+
+        //ArrayList<Food> fudder = new ArrayList<Food>(Arrays.asList(fud));
+        return new ArrayList<Food>(Arrays.asList(fud));
     }
 }

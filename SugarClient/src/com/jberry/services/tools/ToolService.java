@@ -9,7 +9,11 @@ public class ToolService {
     public String userEncoded(){
         User notandi = User.getTheUser();
         Base64 b64 = new Base64();
-        String usr = notandi.getUserName() + ":" + notandi.getPassword();
+        String usr = notandi.getEmail() + ":" + notandi.getPassword();
         return b64.encodeAsString(usr.getBytes());
+    }
+    public String testSingleTon(){
+        User user = User.getTheUser();
+        return user.getUserName();
     }
 }

@@ -26,12 +26,11 @@ import org.apache.http.message.BasicNameValuePair;
 
 
 public class UserServiceImpl implements UserService {
-
 	@Override
 	public boolean login(String email, String password) throws IOException{
 
         String Url = "http://localhost:3000/api/login";
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = HttpClientBuilder.create().build();
         HttpPost request = new HttpPost(Url);
         List<NameValuePair> params = new LinkedList<NameValuePair>();
 
@@ -57,7 +56,7 @@ public class UserServiceImpl implements UserService {
 
     //registers the user and returns true if successful.
     @Override
-    public boolean register(String username, String password, String email) throws IOException {
+    public boolean register(String username, String password, String email) throws IOException {//TODO:Depricated?
 
         String Url = "http://localhost:3000/sweet/register";
         HttpClient client = HttpClientBuilder.create().build();

@@ -1,11 +1,10 @@
 package com.jberry.dto;
 
 public class User {
+    private String Id;
     private String userName;
     private String password;
     private String email;
-    private boolean isDiabetic;
-    private int Id;
 
     //Made the class Singleton.
     private User(){ }
@@ -27,7 +26,7 @@ public class User {
     public String getEmail() {
         return email;
     }
-    public int getId() {
+    public String getId() {
         return Id;
     }
 
@@ -41,10 +40,7 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         Id = id;
     }
-
-    public boolean isDiabetic() {return isDiabetic;}
-    public void setDiabetic(boolean isDiabetic) {this.isDiabetic = isDiabetic;}
 }
