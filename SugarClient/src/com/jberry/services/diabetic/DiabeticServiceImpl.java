@@ -72,4 +72,23 @@ public class DiabeticServiceImpl implements DiabeticService{
 
         return jesus.fromJson(output, Diabetic.class);
     }
+    public boolean finishCheckIn(Diabetic DiabeticUsr) throws IOException{
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://localhost:3000/api/setCheckinInfo";
+
+        Gson jesus = new Gson();
+        String ans = jesus.toJson(DiabeticUsr);
+
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpPut post = new HttpPut(url);
+        post.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        post.setHeader("Content-type", "application/json");
+        post.setEntity(new StringEntity(ans));
+
+        HttpResponse response = client.execute(post);
+        if (response.getStatusLine().getStatusCode() == 200){
+            return true;
+        }
+        return false;
+    }
 }

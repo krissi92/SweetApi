@@ -9,4 +9,5 @@ public interface DiabeticService {
 
     Diabetic getDiabeticInfo(String userId)throws IOException;
     boolean postDiabeticInfo(Diabetic DiabeticUsr) throws IOException;
+    boolean finishCheckIn(Diabetic DiabeticUsr) throws IOException;
 }

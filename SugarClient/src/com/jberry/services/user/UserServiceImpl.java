@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean login(String email, String password) throws IOException{
 
-        String Url = "http://10.0.2.2:3000/api/login";
+        String Url = "http://localhost:3000/api/login";
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost request = new HttpPost(Url);
         List<NameValuePair> params = new LinkedList<NameValuePair>();

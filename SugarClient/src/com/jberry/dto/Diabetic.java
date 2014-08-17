@@ -4,7 +4,9 @@ public class Diabetic {
     private double morningRatio;
     private double noonRatio;
     private double eveningRatio;
-    private float insulinSensitivity;
+    private double insulinSensitivity;
+    private long lastDoseTime;
+    private double lastDoseAmount;
 
     //Setters
     public void setMorningRatio(double morningRatio) {
@@ -16,7 +18,7 @@ public class Diabetic {
     public void setEveningRatio(double eveningRatio) {
         this.eveningRatio = eveningRatio;
     }
-    public void setInsulinSensitivity(float insulinSensitivity) {
+    public void setInsulinSensitivity(double insulinSensitivity) {
         this.insulinSensitivity = insulinSensitivity;
     }
 
@@ -30,7 +32,23 @@ public class Diabetic {
     public double getEveningRatio() {
         return eveningRatio;
     }
-    public float getInsulinSensitivity() {
+    public double getInsulinSensitivity() {
         return insulinSensitivity;
+    }
+
+    public long getLastDoseTime() {
+        return lastDoseTime;
+    }
+
+    public void setLastDoseTime(long lastDoseTime) {
+        this.lastDoseTime = lastDoseTime;
+    }
+
+    public double getLastDoseAmount() {
+        return lastDoseAmount;
+    }
+
+    public void setLastDoseAmount(double lastDoseAmount) {
+        this.lastDoseAmount = lastDoseAmount;
     }
 }

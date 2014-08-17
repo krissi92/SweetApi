@@ -21,15 +21,15 @@ import java.util.*;
 public class TestRunner {
 	public static void main(String[] args) throws Exception {
         User daUser = User.getTheUser();
-        daUser.setId("53f0d8834374ebf140097a89");
-        daUser.setUserName("kalli");
-        daUser.setPassword("kalli");
-        daUser.setEmail("kalli@kalli.is");
+        daUser.setId("53f0e8bdc3bbbe140af47590");
+        daUser.setUserName("yoloswag");
+        daUser.setPassword("yoloswag");
+        daUser.setEmail("yolo@swag.com");
 
         UserService usr = UserServiceFactory.getUserService();
 
-        //usr.login(daUser.getUserName(), daUser.getPassword());
-
+        usr.login(daUser.getEmail(), daUser.getPassword());
+/*
         InsulinService ins = InsulinServiceFactory.getInsulinService();
         FoodService fsv = FoodServiceFactory.getFoodService();
 
@@ -50,14 +50,15 @@ public class TestRunner {
         profile.setSex("KK");
 
         profileService.postUpdatedProfile(profile);
-
+*/
         DiabeticService diabeticService = DiabeticServiceFactory.getDiabeticService();
-        Diabetic D = diabeticService.getDiabeticInfo("53f0d8834374ebf140097a89");
-        D.setNoonRatio(50.5);
-        diabeticService.postDiabeticInfo(D);
+        Diabetic D = diabeticService.getDiabeticInfo("53f0e8bdc3bbbe140af47590");
+        D.setLastDoseAmount(100);
+        D.setLastDoseTime(1408305598);
+        diabeticService.finishCheckIn(D);
 
-        Diabetic B = diabeticService.getDiabeticInfo("53f0d8834374ebf140097a89");
-        System.out.println("Shanghigh Noon " + B.getNoonRatio());
+        Diabetic B = diabeticService.getDiabeticInfo("53f0e8bdc3bbbe140af47590");
+        System.out.println("Shanghigh Noon " + B.getLastDoseAmount());
 
         Base64 b64 = new Base64();
         String notandi =  "jesus:jesus";
