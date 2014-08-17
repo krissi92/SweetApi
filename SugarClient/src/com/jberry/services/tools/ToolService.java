@@ -12,8 +12,4 @@ public class ToolService {
         String usr = notandi.getEmail() + ":" + notandi.getPassword();
         return b64.encodeAsString(usr.getBytes());
     }
-    public String testSingleTon(){
-        User user = User.getTheUser();
-        return user.getUserName();
-    }
 }

@@ -1,7 +1,10 @@
 package com.jberry.services.profile;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.jberry.dto.Profile;
+import com.jberry.services.tools.ToolService;
+import com.jberry.services.tools.ToolServiceFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -12,59 +15,60 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Krissi on 5.8.2014.
- */
 public class ProfileServiceImpl implements ProfileService {
 
     @Override
-    public Profile getUserProfile(String userId) {
+    public Profile getUserProfile(String userId) throws IOException {
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://localhost:3000/api/profile";
 
         HttpClient httpClient = HttpClientBuilder.create().build();
-        HttpGet httpget = new HttpGet("http://localhost:3000/api/diabeticProfile");
-        httpget.addHeader("user._iD", userId);
-        HttpResponse response;
-        try {
+        HttpGet request = new HttpGet(url);
+        request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
-            response = httpClient.execute(httpget);
-            System.out.println("status message: " + response.getStatusLine());
-        } catch (IOException e) {
-            e.printStackTrace();
+        HttpResponse response = httpClient.execute(request);
+
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader((response.getEntity().getContent())));
+
+        StringBuilder builder = new StringBuilder();
+        String output;
+        while ((output = br.readLine()) != null) {
+            builder.append(output);
         }
-        Profile getProfile = new Profile();
+        output = builder.toString();
 
+        Gson jesus = new Gson();
 
-        return null;
+        return jesus.fromJson(output, Profile.class);
     }
 
     @Override
-    public Profile postUpdatedProfile(Profile user) throws IOException {
+    public boolean postUpdatedProfile(Profile user) throws IOException {
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://localhost:3000/api/profile/update";
 
-        JsonObject profile = new JsonObject();
-        profile.addProperty("weight", user.getWeight());
-        profile.addProperty("height", user.getHeight());
-        profile.addProperty("sex", user.getSex());
-        profile.addProperty("birthday", user.getBirthDay());
+        Gson jesus = new Gson();
+        String jsonObject = jesus.toJson(user);
 
-        StringEntity params = null;
-        try {
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpPut putReq = new HttpPut(url);
+        putReq.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        putReq.setHeader("Content-type", "application/json");
+        putReq.setEntity(new StringEntity(jsonObject));
 
-            HttpClient httpClient = HttpClientBuilder.create().build();
-            HttpPut putReq = new HttpPut("http://localhost:3000/api/profile/update");
-            params = new StringEntity(profile.toString());
-            putReq.setEntity(params);
-            HttpResponse response = httpClient.execute(putReq);
-            System.out.println("StatusCode: " + response.getStatusLine());
+        HttpResponse response = httpClient.execute(putReq);
 
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+        if (response.getStatusLine().getStatusCode() == 200){
+            return true;
         }
-
-        return null;
+        return false;
     }
 }

@@ -3,13 +3,9 @@ import com.jberry.dto.Profile;
 
 import java.io.IOException;
 
-
-/**
- * Created by Krissi on 5.8.2014.
- */
 public interface ProfileService {
 
-    Profile getUserProfile(String userId);
-    Profile postUpdatedProfile(Profile user) throws IOException;
+    Profile getUserProfile(String userId) throws IOException;
+    boolean postUpdatedProfile(Profile user) throws IOException;
 
 }

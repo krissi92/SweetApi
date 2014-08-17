@@ -1,13 +1,10 @@
 package com.jberry.services.profile;
 
-/**
- * Created by Krissi on 5.8.2014.
- */
 public class ProfileServiceFactory {
     public static ProfileService getProfileService() {
         Class c = null;
         try {
-            c = Class.forName("com.jberry.services.profile.ProfileService");
+            c = Class.forName("com.jberry.services.profile.ProfileServiceImpl");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

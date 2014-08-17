@@ -51,7 +51,6 @@ public class InsulinServiceImpl implements InsulinService {
         System.out.println("ans: " + ans);
 
         HttpResponse response = client.execute(post);
-        response = client.execute(post);
 
         BufferedReader br = new BufferedReader(
                 new InputStreamReader((response.getEntity().getContent())));
