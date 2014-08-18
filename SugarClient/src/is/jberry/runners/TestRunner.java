@@ -25,10 +25,10 @@ public class TestRunner {
         User user = User.getTheUser();
         UserService usr = UserServiceFactory.getUserService();
         if(usr.login("kalli@kalli.is","kalli")){
-            System.out.println("YAY!!");
+            System.out.println("Logged in!!");
         }
         else{
-            System.out.println("Boo");
+            System.out.println("Not logged in");
         }
 
         MealService mealService = MealServiceFactory.getMealService();
