@@ -40,7 +40,7 @@ public class FoodServiceImpl implements FoodService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //ef það er fleyra en eitt item sem kemur til greina þá er skiluð summa af Carbs.
+        //ef það er fleyra en eitt item sem kemur til greina þá er skiluð summa af Carbs.TODO: Skila villu :/
         double carbs = 0.0;
         for (Food food : foodItems){
             carbs += food.getTotalCarbohydrates();
@@ -69,10 +69,8 @@ public class FoodServiceImpl implements FoodService {
         output = builder.toString();
 
         Gson jesus = new Gson();
-
         Food[] fud = jesus.fromJson(output ,Food[].class);
 
-        //ArrayList<Food> fudder = new ArrayList<Food>(Arrays.asList(fud));
         return new ArrayList<Food>(Arrays.asList(fud));
     }
 }

@@ -5,6 +5,8 @@ import com.jberry.services.diabetic.DiabeticService;
 import com.jberry.services.diabetic.DiabeticServiceFactory;
 import com.jberry.services.insulin.InsulinService;
 import com.jberry.services.insulin.InsulinServiceFactory;
+import com.jberry.services.meal.MealService;
+import com.jberry.services.meal.MealServiceFactory;
 import com.jberry.services.profile.ProfileService;
 import com.jberry.services.profile.ProfileServiceFactory;
 import com.jberry.services.tools.ToolService;
@@ -20,55 +22,29 @@ import java.util.*;
 
 public class TestRunner {
 	public static void main(String[] args) throws Exception {
-        User daUser = User.getTheUser();
-        /*daUser.setId("53f0e8bdc3bbbe140af47590");
-        daUser.setUserName("yoloswag");
-        daUser.setPassword("yoloswag");
-        daUser.setEmail("yolo@swag.com");*/
-
+        User user = User.getTheUser();
         UserService usr = UserServiceFactory.getUserService();
-
-        if (usr.login("kalli@kalli.is", "kalli")){
-            System.out.println("YAY!");
+        if(usr.login("kalli@kalli.is","kalli")){
+            System.out.println("YAY!!");
         }
-/*
-        InsulinService ins = InsulinServiceFactory.getInsulinService();
-        FoodService fsv = FoodServiceFactory.getFoodService();
+        else{
+            System.out.println("Boo");
+        }
 
-        //System.out.println(fsv.getFoodInformation("banana"));
+        MealService mealService = MealServiceFactory.getMealService();
+        ArrayList<FoodTO> ing = new ArrayList<FoodTO>();
+        ing.add(new FoodTO("banani", 200));
+        ing.add(new FoodTO("epli", 100));
+        ing.add(new FoodTO("ananas", 100));
 
-        ArrayList<FoodTO> foodItems = new ArrayList<FoodTO>();
-        foodItems.add(new FoodTO("Banana",100));
-        foodItems.add(new FoodTO("apple", 120));
-        foodItems.add(new FoodTO("mango", 222));
-
-        System.out.println("Insulin: " + ins.calculateInsulin(System.currentTimeMillis() / 1000, foodItems, 20, true));
-
-        Profile profile = new Profile();
-        ProfileService profileService = ProfileServiceFactory.getProfileService();
-        profile = profileService.getUserProfile(daUser.getId());
-        System.out.println(profile.getUserName());
-
-        profile.setSex("KK");
-
-        profileService.postUpdatedProfile(profile);
-*/
-        System.out.println("usr id: " + daUser.getId());
-        System.out.println("usr name: " + daUser.getUserName());
-        System.out.println("usr password: " + daUser.getPassword());
-        System.out.println("usr email: " + daUser.getEmail());
-        /*DiabeticService diabeticService = DiabeticServiceFactory.getDiabeticService();
-        Diabetic D = diabeticService.getDiabeticInfo("53f0e8bdc3bbbe140af47590");
-        D.setLastDoseAmount(100);
-        D.setLastDoseTime(1408305598);
-        diabeticService.finishCheckIn(D);
-
-        Diabetic B = diabeticService.getDiabeticInfo("53f0e8bdc3bbbe140af47590");
-        System.out.println("Shanghigh Noon " + B.getLastDoseAmount());
-
-        Base64 b64 = new Base64();
-        String notandi =  "jesus:jesus";
-        System.out.println("encoding: " + b64.encodeAsString(notandi.getBytes()));*/
+        if (mealService.createMeal("moby",ing)){
+            System.out.println("Create a Meal returns true");
+            /*Meal mealMeal = mealService.getMealByMealId();
+            System.out.println("nuserId: " + mealMeal.getUserId());
+            System.out.println("ruserId: " + user.getId());
+            System.out.println("mealMeal name: " + mealMeal.getMealName());
+            System.out.println("mealMeal MId: " + mealMeal.getMealId());*/
+        }
 
 	}
 }

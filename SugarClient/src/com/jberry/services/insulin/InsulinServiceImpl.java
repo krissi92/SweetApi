@@ -30,13 +30,13 @@ import java.util.List;
 
 public class InsulinServiceImpl implements InsulinService {
     @Override
-    public double calculateInsulin(long timeStamp, ArrayList<FoodTO> foodMap, double bloodSugar, boolean exercise) throws IOException{
+    public double calculateInsulin(long timeStamp, ArrayList<FoodTO> foodArray, double bloodSugar, boolean exercise) throws IOException{
         Insulin insulinInstance = new Insulin();
         ToolService tService = new ToolService();
         String url = "http://" + tService.url() + ":3000/api/calculateInsuline";//TODO: Make a legit http url
 
         insulinInstance.setTimeStamp(timeStamp);
-        insulinInstance.setTotalCarbs(sumObjectList(foodMap));//TODO:Mebbeh round
+        insulinInstance.setTotalCarbs(sumObjectList(foodArray));//TODO:Mebbeh round
         insulinInstance.setBloodSugar(bloodSugar);
         insulinInstance.setExcersise(exercise);
 

@@ -33,17 +33,16 @@ public class UserServiceImpl implements UserService {
 	public boolean login(String email, String password) throws IOException{
         ToolService toolService = ToolServiceFactory.getToolService();
         String Url = "http://" + toolService.url() + ":3000/api/login";
+
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost request = new HttpPost(Url);
-        List<NameValuePair> params = new LinkedList<NameValuePair>();
 
+        List<NameValuePair> params = new LinkedList<NameValuePair>();
         params.add(new BasicNameValuePair("email", email));
         params.add(new BasicNameValuePair("password", password));
 
         request.setEntity(new UrlEncodedFormEntity(params,"UTF-8"));
         HttpResponse response = client.execute(request);
-        System.out.println("\nSending 'GET' request to url:" + Url);
-        System.out.println("response code: " + response.getStatusLine().getStatusCode());
 
         if(response.getStatusLine().getStatusCode() != 302){
             return false;
@@ -77,8 +76,6 @@ public class UserServiceImpl implements UserService {
             builder.append(output);
         }
         output = builder.toString();
-
-        System.out.println(output);
 
         Gson jesus = new Gson();
         User usr = jesus.fromJson(output ,User.class);

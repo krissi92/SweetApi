@@ -80,12 +80,12 @@ public class DiabeticServiceImpl implements DiabeticService{
         String ans = jesus.toJson(DiabeticUsr);
 
         HttpClient client = HttpClientBuilder.create().build();
-        HttpPut post = new HttpPut(url);
-        post.setHeader("Authorization", "Basic " + toolService.userEncoded());
-        post.setHeader("Content-type", "application/json");
-        post.setEntity(new StringEntity(ans));
+        HttpPut put = new HttpPut(url);
+        put.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        put.setHeader("Content-type", "application/json");
+        put.setEntity(new StringEntity(ans));
 
-        HttpResponse response = client.execute(post);
+        HttpResponse response = client.execute(put);
         if (response.getStatusLine().getStatusCode() == 200){
             return true;
         }
