@@ -1,11 +1,18 @@
 package com.jberry.dto;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Meal {
     private String mealId;
     private String userId;
-    private String MealName;
+    private String mealName;
+    private ArrayList<FoodTO> ingredients;
+    private double totalFat;
+    private double totaCarbs;
+    private double totalSugar;
+    private double totalFiber;
+    private double totalProtien;
+    private double totalCholesterol;
 
     //Setters
     public void setMealId(String mealId) {
@@ -15,7 +22,28 @@ public class Meal {
         this.userId = userId;
     }
     public void setMealName(String mealName) {
-        MealName = mealName;
+        mealName = mealName;
+    }
+    public void setIngredients(ArrayList<FoodTO> ingredients) {
+        this.ingredients = ingredients;
+    }
+    public void setTotalFat(double totalFat) {
+        this.totalFat = totalFat;
+    }
+    public void setTotaCarbs(double totaCarbs) {
+        this.totaCarbs = totaCarbs;
+    }
+    public void setTotalSugar(double totalSugar) {
+        this.totalSugar = totalSugar;
+    }
+    public void setTotalFiber(double totalFiber) {
+        this.totalFiber = totalFiber;
+    }
+    public void setTotalProtien(double totalProtien) {
+        this.totalProtien = totalProtien;
+    }
+    public void setTotalCholesterol(double totalCholesterol) {
+        this.totalCholesterol = totalCholesterol;
     }
 
     //Getters
@@ -26,6 +54,27 @@ public class Meal {
         return userId;
     }
     public String getMealName() {
-        return MealName;
+        return mealName;
+    }
+    public ArrayList<FoodTO> getIngredients() {
+        return ingredients;
+    }
+    public double getTotalFat() {
+        return totalFat;
+    }
+    public double getTotaCarbs() {
+        return totaCarbs;
+    }
+    public double getTotalSugar() {
+        return totalSugar;
+    }
+    public double getTotalFiber() {
+        return totalFiber;
+    }
+    public double getTotalProtien() {
+        return totalProtien;
+    }
+    public double getTotalCholesterol() {
+        return totalCholesterol;
     }
 }

@@ -33,14 +33,13 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
-    public double getCarbsFromFood(String foodName) {
+    public double getTotalCarbsFromFood(String foodName) {
         ArrayList<Food> foodItems = new ArrayList<Food>();
         try {
             foodItems = getFoodInformation(foodName);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //ef það er fleyra en eitt item sem kemur til greina þá er skiluð summa af Carbs.TODO: Skila villu :/
         double carbs = 0.0;
         for (Food food : foodItems){
             carbs += food.getTotalCarbohydrates();
@@ -49,8 +48,84 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
+    public double getTotalFatFromFood(String foodName) {
+        ArrayList<Food> foodItems = new ArrayList<Food>();
+        try {
+            foodItems = getFoodInformation(foodName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double fat = 0.0;
+        for (Food food : foodItems){
+            fat += food.getFat();
+        }
+        return fat;
+    }
+
+    @Override
+    public double getTotalProteinsFromFood(String foodName) {
+        ArrayList<Food> foodItems = new ArrayList<Food>();
+        try {
+            foodItems = getFoodInformation(foodName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double proteins = 0.0;
+        for (Food food : foodItems){
+            proteins += food.getProteins();
+        }
+        return proteins;
+    }
+
+    @Override
+    public double getTotalSugarFromFood(String foodName) {
+        ArrayList<Food> foodItems = new ArrayList<Food>();
+        try {
+            foodItems = getFoodInformation(foodName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double sugar = 0.0;
+        for (Food food : foodItems){
+            sugar += food.getSugars();
+        }
+        return sugar;
+    }
+
+    @Override
+    public double getTotalCholesterolFromFood(String foodName) {
+        ArrayList<Food> foodItems = new ArrayList<Food>();
+        try {
+            foodItems = getFoodInformation(foodName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double cholesterol = 0.0;
+        for (Food food : foodItems){
+            cholesterol += food.getCholesterol();
+        }
+        return cholesterol;
+    }
+
+    @Override
+    public double getTotalFiberFromFood(String foodName) {
+        ArrayList<Food> foodItems = new ArrayList<Food>();
+        try {
+            foodItems = getFoodInformation(foodName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double fiber = 0.0;
+        for (Food food : foodItems){
+            fiber  += food.getFiber();
+        }
+        return fiber ;
+    }
+
+    @Override
     public ArrayList<Food> getFoodInformation(String foodName) throws IOException {
         ToolService toolService = ToolServiceFactory.getToolService();
+        foodName = foodName.replace(" ","%20"); //because fuck jBerry
         String url = "http://" + toolService.url() + ":3000/api/food/getByName/" + foodName;
 
         HttpClient client = HttpClientBuilder.create().build();

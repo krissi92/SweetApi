@@ -4,10 +4,13 @@ import com.google.gson.Gson;
 import com.jberry.dto.Food;
 import com.jberry.dto.FoodTO;
 import com.jberry.dto.Meal;
+import com.jberry.services.food.FoodService;
+import com.jberry.services.food.FoodServiceFactory;
 import com.jberry.services.tools.ToolService;
 import com.jberry.services.tools.ToolServiceFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
@@ -25,17 +28,40 @@ public class MealServiceImpl implements MealService{
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/createMeal";
 
+        FoodService foodService = FoodServiceFactory.getFoodService();
+
+        double totalCarbs = 0;
+        double totalProtien = 0;
+        double totalSugar = 0;
+        double totalCholesterol = 0;
+        double totalFiber = 0;
+
+        for (FoodTO mealItems : ingredients){
+            totalCarbs += foodService.getTotalCarbsFromFood(mealItems.getFoodName());
+            totalProtien += foodService.getTotalProteinsFromFood(mealItems.getFoodName());
+            totalSugar += foodService.getTotalSugarFromFood(mealItems.getFoodName());
+            totalCholesterol += foodService.getTotalCholesterolFromFood(mealItems.getFoodName());
+            totalFiber += foodService.getTotalFiberFromFood(mealItems.getFoodName());
+        }
+
         Gson jesus = new Gson();
         String jsonJesus = jesus.toJson(ingredients);
 
-        System.out.println(jsonJesus);
+        String krissiJesus = "{ \"mealName\":\"" + mealName + "\", " +
+                "\"ingredients\":" + jsonJesus + "," +
+                "\"totalCarbs\":\"" + totalCarbs + "\"," +
+                "\"totalProtein\":\"" + totalProtien + "\"," +
+                "\"totalSugar\":\"" + totalSugar + "\"," +
+                "\"totalCholesterol\":\"" + totalCholesterol + "\", " +
+                "\"totalFiber\":\"" + totalFiber + "\" }";
+        System.out.println("Json búið");
+        System.out.println(krissiJesus);
 
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost(url);
         post.setHeader("Authorization", "Basic " + toolService.userEncoded());
         post.setHeader("Content-type", "application/json");
-        post.setHeader("mealName", mealName);
-        post.setEntity(new StringEntity(jsonJesus));
+        post.setEntity(new StringEntity(krissiJesus));
 
         HttpResponse response = client.execute(post);
         if (response.getStatusLine().getStatusCode() == 302){
@@ -44,14 +70,14 @@ public class MealServiceImpl implements MealService{
         return false;
     }
     @Override
-    public Meal getMealById(String mealId) throws IOException {
+    public Meal getMealByName(String mealName) throws IOException {
         ToolService toolService = ToolServiceFactory.getToolService();
-        String url = "http://" + toolService.url() + ":3000/api/food/getMealById";
+        String url = "http://" + toolService.url() + ":3000/api/getMealByName";
 
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
-        request.setHeader("mealId", mealId);
+        request.setHeader("mealName", mealName);
 
         HttpResponse response = client.execute(request);
         BufferedReader br = new BufferedReader(
@@ -65,11 +91,41 @@ public class MealServiceImpl implements MealService{
         output = builder.toString();
 
         Gson jesus = new Gson();
-        return jesus.fromJson(output ,Meal.class);
+        Meal meal = jesus.fromJson(output ,Meal.class);
+        meal.setIngredients(getIngredients(mealName));
+        return meal;
     }
+
+    private ArrayList<FoodTO> getIngredients(String mealName) throws IOException {
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://" + toolService.url() + ":3000/api/getMealByName/ingredients";
+
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpGet request = new HttpGet(url);
+        request.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        request.setHeader("mealName", mealName);
+
+        HttpResponse response = client.execute(request);
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader((response.getEntity().getContent())));
+
+        StringBuilder builder = new StringBuilder();
+        String output;
+        while ((output = br.readLine()) != null) {
+            builder.append(output);
+        }
+        output = builder.toString();
+
+        Gson jesus = new Gson();
+        //return jesus.fromJson(output ,Meal.class);
+        FoodTO[] meals = jesus.fromJson(output ,FoodTO[].class);
+
+        return new ArrayList<FoodTO>(Arrays.asList(meals));
+    }
+
     public ArrayList<Meal> getMealsByUserId() throws IOException {
         ToolService toolService = ToolServiceFactory.getToolService();
-        String url = "http://" + toolService.url() + ":3000/api/food/getMealByUserId";
+        String url = "http://" + toolService.url() + ":3000/api/getMealsByUserId";
 
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
@@ -91,9 +147,29 @@ public class MealServiceImpl implements MealService{
 
         return new ArrayList<Meal>(Arrays.asList(meals));
     }
-    public boolean editMeal(String mealId){
-        return true;
+    public boolean deleteMeal(String mealName) throws IOException {
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://" + toolService.url() + ":3000/api/deleteMeal";
+
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpDelete request = new HttpDelete(url);
+        request.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        request.setHeader("mealName", mealName);
+
+        HttpResponse response = client.execute(request);
+
+        if (response.getStatusLine().getStatusCode() == 200){
+            return true;
+        }
+        return false;
     }
 
-    //public getNutritionFromMeal();
+    public boolean editMeal(String mealName, ArrayList<FoodTO> newIngredients) throws IOException{
+        if (createMeal(mealName,newIngredients)){
+            if (deleteMeal(mealName)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

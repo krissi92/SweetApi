@@ -74,7 +74,7 @@ public class InsulinServiceImpl implements InsulinService {
 
         double totalCarbs = 0.0;
         for (FoodTO foods : foodItems){
-            double carbs = foodServ.getCarbsFromFood(foods.getFoodName());
+            double carbs = foodServ.getTotalCarbsFromFood(foods.getFoodName());
             double grams = foods.getGrams();
             carbs = (carbs/100) * grams;
             totalCarbs += carbs;

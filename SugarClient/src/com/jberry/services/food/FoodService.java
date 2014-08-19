@@ -7,6 +7,11 @@ import java.util.ArrayList;
 
 public interface FoodService {
     ArrayList<String> getFoodTitle(String foodName);
-    double getCarbsFromFood(String Food);
+    double getTotalCarbsFromFood(String Food);
+    double getTotalFatFromFood(String foodName);
+    double getTotalProteinsFromFood(String foodName);
+    double getTotalSugarFromFood(String foodName);
+    double getTotalCholesterolFromFood(String foodName);
+    double getTotalFiberFromFood(String foodName);
     ArrayList<Food> getFoodInformation(String foodName) throws IOException;
 }

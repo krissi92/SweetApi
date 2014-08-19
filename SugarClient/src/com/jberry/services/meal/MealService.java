@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public interface MealService {
-    public boolean createMeal(String mealName, ArrayList<FoodTO> ingredients) throws IOException;
-    public Meal getMealById(String mealId) throws IOException;
-    public ArrayList<Meal> getMealsByUserId() throws IOException;
-    public boolean editMeal(String mealId);
-
+    boolean createMeal(String mealName, ArrayList<FoodTO> ingredients) throws IOException;
+    Meal getMealByName(String mealName) throws IOException;
+    ArrayList<Meal> getMealsByUserId() throws IOException;
+    boolean deleteMeal(String mealName) throws IOException;
+    boolean editMeal(String mealName, ArrayList<FoodTO> newIngredients) throws IOException;
 }

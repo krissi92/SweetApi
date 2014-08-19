@@ -65,9 +65,6 @@ public class DiabeticServiceImpl implements DiabeticService{
         }
         output = builder.toString();
 
-        System.out.println("mafakka: " + output);
-        System.out.println("mafakka2: " + url);
-
         Gson jesus = new Gson();
 
         return jesus.fromJson(output, Diabetic.class);
