@@ -54,7 +54,7 @@ public class TestRunner {
         System.out.println(curry.get(0).getTimeOfMeal());
 
         //long times = System.currentTimeMillis()/1000;
-        long times = 1408497428;
+        long times = 1408492293;
         String frood = "Filthy Burgers";
 
         /*if(mealService.createMeal(frood,ing)){
