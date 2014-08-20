@@ -1,7 +1,5 @@
 package com.jberry.dto;
 
-import java.util.Date;
-
 public class CalanderMeal {
     private String mealName;
     private Long timeOfMeal;

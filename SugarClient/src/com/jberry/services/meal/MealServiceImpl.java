@@ -1,7 +1,6 @@
 package com.jberry.services.meal;
 
 import com.google.gson.Gson;
-import com.jberry.dto.Food;
 import com.jberry.dto.FoodTO;
 import com.jberry.dto.Meal;
 import com.jberry.services.food.FoodService;
@@ -13,10 +12,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

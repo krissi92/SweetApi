@@ -1,7 +1,5 @@
 package com.jberry.dto;
 
-import com.google.gson.annotations.SerializedName;
-
 public class User {
     private String id;
     private String userName;

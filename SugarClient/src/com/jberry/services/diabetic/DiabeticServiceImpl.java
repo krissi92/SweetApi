@@ -2,24 +2,17 @@ package com.jberry.services.diabetic;
 
 import com.google.gson.Gson;
 import com.jberry.dto.Diabetic;
-import com.jberry.dto.User;
 import com.jberry.services.tools.ToolService;
 import com.jberry.services.tools.ToolServiceFactory;
-
-import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.protocol.HTTP;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 
 public class DiabeticServiceImpl implements DiabeticService{
     @Override

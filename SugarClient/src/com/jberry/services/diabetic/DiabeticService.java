@@ -1,9 +1,7 @@
 package com.jberry.services.diabetic;
 
 import com.jberry.dto.Diabetic;
-
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 public interface DiabeticService {
 

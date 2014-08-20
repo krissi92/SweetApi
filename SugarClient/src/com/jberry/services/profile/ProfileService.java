@@ -1,6 +1,6 @@
 package com.jberry.services.profile;
-import com.jberry.dto.Profile;
 
+import com.jberry.dto.Profile;
 import java.io.IOException;
 
 public interface ProfileService {

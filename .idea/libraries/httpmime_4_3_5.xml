@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="httpmime-4.3.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SugarClient/HttpComponents/httpcomponents-client-4.3.5/lib/httpmime-4.3.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,7 +1,5 @@
 package com.jberry.services.tools;
 
-import com.google.gson.Gson;
-import com.jberry.dto.Insulin;
 import com.jberry.dto.User;
 import org.apache.commons.codec.binary.Base64;
 
@@ -13,6 +11,6 @@ public class ToolService {
         return b64.encodeAsString(usr.getBytes());
     }
     public String url(){
-        return "localhost";
+        return "10.0.2.2";
     }
 }

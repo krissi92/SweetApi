@@ -1,26 +1,18 @@
 package com.jberry.services.profile;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.jberry.dto.Profile;
 import com.jberry.services.tools.ToolService;
 import com.jberry.services.tools.ToolServiceFactory;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProfileServiceImpl implements ProfileService {
 
