@@ -11,7 +11,7 @@ public class Meal {
     private double totaCarbs;
     private double totalSugar;
     private double totalFiber;
-    private double totalProtien;
+    private double totalProtein;
     private double totalCholesterol;
 
     //Setters
@@ -40,7 +40,7 @@ public class Meal {
         this.totalFiber = totalFiber;
     }
     public void setTotalProtien(double totalProtien) {
-        this.totalProtien = totalProtien;
+        this.totalProtein = totalProtien;
     }
     public void setTotalCholesterol(double totalCholesterol) {
         this.totalCholesterol = totalCholesterol;
@@ -72,7 +72,7 @@ public class Meal {
         return totalFiber;
     }
     public double getTotalProtien() {
-        return totalProtien;
+        return totalProtein;
     }
     public double getTotalCholesterol() {
         return totalCholesterol;

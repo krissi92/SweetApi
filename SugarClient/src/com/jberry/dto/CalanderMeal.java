@@ -7,6 +7,14 @@ public class CalanderMeal {
     private Long timeOfMeal;
     private String userId;
 
+    //struct
+
+
+    public CalanderMeal(String mealName, Long timeOfMeal) {
+        this.mealName = mealName;
+        this.timeOfMeal = timeOfMeal;
+    }
+
     //setters
     public void setMealName(String mealName) {
         this.mealName = mealName;

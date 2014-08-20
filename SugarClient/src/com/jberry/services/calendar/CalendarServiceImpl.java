@@ -1,33 +1,70 @@
 package com.jberry.services.calendar;
 
+import com.google.gson.Gson;
 import com.jberry.dto.CalanderMeal;
+import com.jberry.services.tools.ToolService;
+import com.jberry.services.tools.ToolServiceFactory;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 public class CalendarServiceImpl implements CalendarService {
+    @Override
+    public boolean saveMealToCalander(String mealName, long timeStamp) throws IOException {
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://" + toolService.url() + ":3000/api/saveMealToCalander";
 
-    public List<CalanderMeal>getMealsByDay(Long unixTimestamp) {
-        long unixSeconds = unixTimestamp;
+        CalanderMeal calanderMeal = new CalanderMeal(mealName,timeStamp);
 
-        List<CalanderMeal> mealList = new ArrayList<CalanderMeal>() {
-        };
+        Gson jesus = new Gson();
+        String output = jesus.toJson(calanderMeal,CalanderMeal.class);
 
-        for(int i = 0; i<=23; i++) {
-            CalanderMeal calmeal = new CalanderMeal();
-            calmeal.setMealName("BANANASALAT");
-            calmeal.setTimeOfMeal(unixSeconds);
-            calmeal.setUserId("1");
-            mealList.add(i, calmeal);
-            unixSeconds += 3600;
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(url);
+        post.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        post.setHeader("Content-type", "application/json");
+        post.setEntity(new StringEntity(output));
 
+        HttpResponse response = client.execute(post);
+        if (response.getStatusLine().getStatusCode() == 302){
+            return true;
         }
-        return mealList;
+        return false;
     }
+    @Override
+    public ArrayList<CalanderMeal> getMealsByDay(long timeStamp) throws IOException{
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://" + toolService.url() + ":3000/api/getMealsByDay";
 
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpGet request = new HttpGet(url);
+        request.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        request.setHeader("timeStamp", String.valueOf(timeStamp));
 
+        HttpResponse response = client.execute(request);
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader((response.getEntity().getContent())));
+
+        StringBuilder builder = new StringBuilder();
+        String output;
+        while ((output = br.readLine()) != null) {
+            builder.append(output);
+        }
+        output = builder.toString();
+
+        Gson jesus = new Gson();
+        CalanderMeal[] cal = jesus.fromJson(output ,CalanderMeal[].class);
+
+        return new ArrayList<CalanderMeal>(Arrays.asList(cal));
+    }
 }

@@ -31,14 +31,14 @@ public class MealServiceImpl implements MealService{
         FoodService foodService = FoodServiceFactory.getFoodService();
 
         double totalCarbs = 0;
-        double totalProtien = 0;
+        double totalProtein = 0;
         double totalSugar = 0;
         double totalCholesterol = 0;
         double totalFiber = 0;
 
         for (FoodTO mealItems : ingredients){
             totalCarbs += foodService.getTotalCarbsFromFood(mealItems.getFoodName());
-            totalProtien += foodService.getTotalProteinsFromFood(mealItems.getFoodName());
+            totalProtein += foodService.getTotalProteinsFromFood(mealItems.getFoodName());
             totalSugar += foodService.getTotalSugarFromFood(mealItems.getFoodName());
             totalCholesterol += foodService.getTotalCholesterolFromFood(mealItems.getFoodName());
             totalFiber += foodService.getTotalFiberFromFood(mealItems.getFoodName());
@@ -50,7 +50,7 @@ public class MealServiceImpl implements MealService{
         String krissiJesus = "{ \"mealName\":\"" + mealName + "\", " +
                 "\"ingredients\":" + jsonJesus + "," +
                 "\"totalCarbs\":\"" + totalCarbs + "\"," +
-                "\"totalProtein\":\"" + totalProtien + "\"," +
+                "\"totalProtein\":\"" + totalProtein + "\"," +
                 "\"totalSugar\":\"" + totalSugar + "\"," +
                 "\"totalCholesterol\":\"" + totalCholesterol + "\", " +
                 "\"totalFiber\":\"" + totalFiber + "\" }";
@@ -95,7 +95,6 @@ public class MealServiceImpl implements MealService{
         meal.setIngredients(getIngredients(mealName));
         return meal;
     }
-
     private ArrayList<FoodTO> getIngredients(String mealName) throws IOException {
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/getMealByName/ingredients";
