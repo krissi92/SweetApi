@@ -6,5 +6,6 @@ import com.jberry.dto.CalanderMeal;
 
 public interface CalendarService {
     boolean saveMealToCalander(String mealName, long timeStamp) throws IOException;
+    boolean deleteFromCalendar(long timeOfMeal) throws IOException;
     ArrayList<CalanderMeal> getMealsByDay(long timeStamp) throws IOException;
 }

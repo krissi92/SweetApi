@@ -146,6 +146,7 @@ public class MealServiceImpl implements MealService{
 
         return new ArrayList<Meal>(Arrays.asList(meals));
     }
+    @Override
     public boolean deleteMeal(String mealName) throws IOException {
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/deleteMeal";
@@ -162,7 +163,7 @@ public class MealServiceImpl implements MealService{
         }
         return false;
     }
-
+    @Override
     public boolean editMeal(String mealName, ArrayList<FoodTO> newIngredients) throws IOException{
         if (createMeal(mealName,newIngredients)){
             if (deleteMeal(mealName)){

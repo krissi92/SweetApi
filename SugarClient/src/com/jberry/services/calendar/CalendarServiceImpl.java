@@ -6,6 +6,7 @@ import com.jberry.services.tools.ToolService;
 import com.jberry.services.tools.ToolServiceFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -66,5 +67,22 @@ public class CalendarServiceImpl implements CalendarService {
         CalanderMeal[] cal = jesus.fromJson(output ,CalanderMeal[].class);
 
         return new ArrayList<CalanderMeal>(Arrays.asList(cal));
+    }
+    @Override
+    public boolean deleteFromCalendar(long timeOfMeal) throws IOException {
+        ToolService toolService = ToolServiceFactory.getToolService();
+        String url = "http://" + toolService.url() + ":3000/api/deleteFromCalendar";
+
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpDelete request = new HttpDelete(url);
+        request.setHeader("Authorization", "Basic " + toolService.userEncoded());
+        request.setHeader("timeOfMeal", String.valueOf(timeOfMeal));
+
+        HttpResponse response = client.execute(request);
+
+        if (response.getStatusLine().getStatusCode() == 200){
+            return true;
+        }
+        return false;
     }
 }

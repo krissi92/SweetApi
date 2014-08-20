@@ -53,8 +53,15 @@ public class TestRunner {
         System.out.println(curry.get(0).getUserId());
         System.out.println(curry.get(0).getTimeOfMeal());
 
-        /*if (calendarService.saveMealToCalander("dirty burgers", System.currentTimeMillis()/1000)){//mealService.createMeal("Clean Burgers",ing)){
-            System.out.println("saveMeal returns true");
+        //long times = System.currentTimeMillis()/1000;
+        long times = 1408497428;
+        String frood = "Filthy Burgers";
+
+        /*if(mealService.createMeal(frood,ing)){
+            if (calendarService.saveMealToCalander(frood, times))*/
+                if (calendarService.deleteFromCalendar(times))
+                    System.out.println("saveMeal returns true");
+            /*
             Meal mealMeal = mealService.getMealByName("dirty burgers");
             //System.out.println("nuserId: " + mealMeal.getUserId("53f36bc1a680db64101ec2ee"));
             ArrayList<Meal> krissi = mealService.getMealsByUserId();
