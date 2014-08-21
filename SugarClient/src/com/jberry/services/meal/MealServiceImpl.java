@@ -13,6 +13,7 @@ import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -54,7 +55,7 @@ public class MealServiceImpl implements MealService{
         System.out.println("Json búið");
         System.out.println(krissiJesus);
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(url);
         post.setHeader("Authorization", "Basic " + toolService.userEncoded());
         post.setHeader("Content-type", "application/json");
@@ -71,7 +72,7 @@ public class MealServiceImpl implements MealService{
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/getMealByName";
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
         request.setHeader("mealName", mealName);
@@ -96,7 +97,7 @@ public class MealServiceImpl implements MealService{
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/getMealByName/ingredients";
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
         request.setHeader("mealName", mealName);
@@ -123,7 +124,7 @@ public class MealServiceImpl implements MealService{
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/getMealsByUserId";
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
@@ -148,7 +149,7 @@ public class MealServiceImpl implements MealService{
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/deleteMeal";
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpDelete request = new HttpDelete(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
         request.setHeader("mealName", mealName);

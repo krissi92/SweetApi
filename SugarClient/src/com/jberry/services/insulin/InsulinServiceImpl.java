@@ -10,6 +10,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class InsulinServiceImpl implements InsulinService {
 
         String ans = makeJson(insulinInstance);
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(url);
         post.setHeader("Authorization", "Basic " + tService.userEncoded());
         post.setHeader("Content-type", "application/json");

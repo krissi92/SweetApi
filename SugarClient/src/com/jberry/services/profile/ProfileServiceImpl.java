@@ -9,6 +9,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class ProfileServiceImpl implements ProfileService {
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/profile";
 
-        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpClient httpClient = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
@@ -50,7 +51,7 @@ public class ProfileServiceImpl implements ProfileService {
         Gson jesus = new Gson();
         String jsonObject = jesus.toJson(user);
 
-        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpClient httpClient = new DefaultHttpClient();
         HttpPut putReq = new HttpPut(url);
         putReq.setHeader("Authorization", "Basic " + toolService.userEncoded());
         putReq.setHeader("Content-type", "application/json");

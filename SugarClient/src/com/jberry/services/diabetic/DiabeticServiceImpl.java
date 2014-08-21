@@ -9,6 +9,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class DiabeticServiceImpl implements DiabeticService{
         Gson jesus = new Gson();
         String ans = jesus.toJson(DiabeticUsr);
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpPut post = new HttpPut(url);
         post.setHeader("Authorization", "Basic " + toolService.userEncoded());
         post.setHeader("Content-type", "application/json");
@@ -41,7 +42,7 @@ public class DiabeticServiceImpl implements DiabeticService{
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/getDiabeticInfo";
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
@@ -69,7 +70,7 @@ public class DiabeticServiceImpl implements DiabeticService{
         Gson jesus = new Gson();
         String ans = jesus.toJson(DiabeticUsr);
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpPut put = new HttpPut(url);
         put.setHeader("Authorization", "Basic " + toolService.userEncoded());
         put.setHeader("Content-type", "application/json");

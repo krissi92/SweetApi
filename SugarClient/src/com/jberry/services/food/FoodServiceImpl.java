@@ -7,6 +7,7 @@ import com.jberry.services.tools.ToolServiceFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -127,7 +128,7 @@ public class FoodServiceImpl implements FoodService {
         foodName = foodName.replace(" ","%20"); //because fuck jBerry
         String url = "http://" + toolService.url() + ":3000/api/food/getByName/" + foodName;
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 

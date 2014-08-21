@@ -15,6 +15,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -24,7 +25,7 @@ public class UserServiceImpl implements UserService {
         ToolService toolService = ToolServiceFactory.getToolService();
         String Url = "http://" + toolService.url() + ":3000/api/login";
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpPost request = new HttpPost(Url);
 
         List<NameValuePair> params = new LinkedList<NameValuePair>();
@@ -53,7 +54,7 @@ public class UserServiceImpl implements UserService {
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/userinfo";
 
-        HttpClient client = HttpClientBuilder.create().build();
+        HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         request.setHeader("Authorization", "Basic " + toolService.userEncoded());
 
