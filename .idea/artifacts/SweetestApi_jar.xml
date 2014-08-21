@@ -2,15 +2,8 @@
   <artifact type="jar" name="SweetestApi:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/SweetestApi_jar</output-path>
     <root id="archive" name="SweetestApi_jar.jar">
-      <element id="library" level="project" name="GSON" />
-      <element id="library" level="project" name="commons-codec-1.9" />
       <element id="module-output" name="SugarClient" />
-      <element id="library" level="project" name="httpcore-4.3.2" />
-      <element id="library" level="project" name="httpclient-cache-4.3.5" />
-      <element id="library" level="project" name="httpclient-4.3.5" />
-      <element id="library" level="project" name="httpmime-4.3.5" />
-      <element id="library" level="project" name="fluent-hc-4.3.5" />
-      <element id="library" level="project" name="commons-logging-1.2" />
+      <element id="library" level="project" name="gson-2.2.4" />
     </root>
   </artifact>
 </component>
