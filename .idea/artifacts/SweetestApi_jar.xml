@@ -10,6 +10,7 @@
       <element id="library" level="project" name="httpclient-4.3.5" />
       <element id="library" level="project" name="httpmime-4.3.5" />
       <element id="library" level="project" name="fluent-hc-4.3.5" />
+      <element id="library" level="project" name="commons-logging-1.2" />
     </root>
   </artifact>
 </component>

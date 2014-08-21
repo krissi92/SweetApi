@@ -11,6 +11,6 @@ public class ToolService {
         return b64.encodeAsString(usr.getBytes());
     }
     public String url(){
-        return "10.0.2.2";
+        return "jberry.noip.me";
     }
 }

@@ -37,6 +37,9 @@ public class UserServiceImpl implements UserService {
         if(response.getStatusLine().getStatusCode() != 302){
             return false;
         }
+        User notandi = User.getTheUser();
+        notandi.setEmail(email);
+        notandi.setPassword(password);
         if (!initUser(email, password)){
             return false;
         }
@@ -45,8 +48,8 @@ public class UserServiceImpl implements UserService {
 
     private boolean initUser(String email, String password) throws IOException {
         User user = User.getTheUser();
-        user.setEmail(email);
-        user.setPassword(password);
+        //user.setEmail(email);
+        //user.setPassword(password);
         ToolService toolService = ToolServiceFactory.getToolService();
         String url = "http://" + toolService.url() + ":3000/api/userinfo";
 
