@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SweeterAPI">
+    <output-path>$PROJECT_DIR$/out/artifacts/SweeterAPI</output-path>
+    <root id="archive" name="SweeterAPI.jar">
+      <element id="library" level="project" name="gson-2.2.4" />
+      <element id="module-output" name="SugarClient" />
+    </root>
+  </artifact>
+</component>

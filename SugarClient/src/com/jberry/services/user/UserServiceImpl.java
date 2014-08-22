@@ -35,12 +35,13 @@ public class UserServiceImpl implements UserService {
         request.setEntity(new UrlEncodedFormEntity(params,"UTF-8"));
         HttpResponse response = client.execute(request);
 
-        if(response.getStatusLine().getStatusCode() != 302){
+        if(response.getStatusLine().getStatusCode() != 200){
             return false;
         }
         User notandi = User.getTheUser();
         notandi.setEmail(email);
         notandi.setPassword(password);
+
         if (!initUser(email, password)){
             return false;
         }
