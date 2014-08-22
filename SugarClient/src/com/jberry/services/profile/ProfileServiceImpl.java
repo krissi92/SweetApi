@@ -37,9 +37,8 @@ public class ProfileServiceImpl implements ProfileService {
             builder.append(output);
         }
         output = builder.toString();
-
+        br.close();
         Gson jesus = new Gson();
-
         return jesus.fromJson(output, Profile.class);
     }
 

@@ -58,9 +58,8 @@ public class DiabeticServiceImpl implements DiabeticService{
             builder.append(output);
         }
         output = builder.toString();
-
+        br.close();
         Gson jesus = new Gson();
-
         return jesus.fromJson(output, Diabetic.class);
     }
     public boolean finishCheckIn(Diabetic DiabeticUsr) throws IOException{

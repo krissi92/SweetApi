@@ -53,6 +53,7 @@ public class CalendarServiceImpl implements CalendarService {
         HttpResponse response = client.execute(request);
         BufferedReader br = new BufferedReader(
                 new InputStreamReader((response.getEntity().getContent())));
+        br.close();
 
         StringBuilder builder = new StringBuilder();
         String output;

@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
             builder.append(output);
         }
         output = builder.toString();
-
+        br.close();
         Gson jesus = new Gson();
         User usr = jesus.fromJson(output ,User.class);
 

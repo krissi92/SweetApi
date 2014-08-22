@@ -142,7 +142,7 @@ public class FoodServiceImpl implements FoodService {
             builder.append(output);
         }
         output = builder.toString();
-
+        br.close();
         Gson jesus = new Gson();
         Food[] fud = jesus.fromJson(output ,Food[].class);
 

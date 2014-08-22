@@ -50,6 +50,7 @@ public class InsulinServiceImpl implements InsulinService {
             builder.append(output);
         }
         output = builder.toString();
+        br.close();
         return Double.parseDouble(output);
     }
 

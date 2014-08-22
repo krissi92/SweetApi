@@ -87,6 +87,7 @@ public class MealServiceImpl implements MealService{
             builder.append(output);
         }
         output = builder.toString();
+        br.close();
 
         Gson jesus = new Gson();
         Meal meal = jesus.fromJson(output ,Meal.class);
@@ -112,6 +113,7 @@ public class MealServiceImpl implements MealService{
             builder.append(output);
         }
         output = builder.toString();
+        br.close();
 
         Gson jesus = new Gson();
         //return jesus.fromJson(output ,Meal.class);
@@ -138,6 +140,7 @@ public class MealServiceImpl implements MealService{
             builder.append(output);
         }
         output = builder.toString();
+        br.close();
 
         Gson jesus = new Gson();
         Meal[] meals = jesus.fromJson(output ,Meal[].class);
