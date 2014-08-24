@@ -67,11 +67,12 @@ public class UserServiceImpl implements UserService {
 
         StringBuilder builder = new StringBuilder();
         String output;
+        br.close();
         while ((output = br.readLine()) != null) {
             builder.append(output);
         }
         output = builder.toString();
-
+        
         Gson jesus = new Gson();
         User usr = jesus.fromJson(output ,User.class);
 
