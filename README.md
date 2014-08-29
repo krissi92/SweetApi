@@ -1,4 +1,4 @@
 SweetApi
 ========
 
-Dat Sweet Api for my sugar
+This is the Library that MySugar uses to communicate with the server.
