@@ -166,8 +166,8 @@ public class MealServiceImpl implements MealService{
     }
     @Override
     public boolean editMeal(String mealName, ArrayList<FoodTO> newIngredients) throws IOException{
-        if (createMeal(mealName,newIngredients)){
-            if (deleteMeal(mealName)){
+        if (deleteMeal(mealName)){
+            if (createMeal(mealName,newIngredients)){
                 return true;
             }
         }
