@@ -64,7 +64,7 @@ public class DiabeticServiceImpl implements DiabeticService{
     }
     public boolean finishCheckIn(Diabetic DiabeticUsr) throws IOException{
         ToolService toolService = ToolServiceFactory.getToolService();
-        String url = "http://localhost:3000/api/setCheckinInfo";
+        String url = "http://" + toolService.url() + ":3000/api/setCheckinInfo";
 
         Gson jesus = new Gson();
         String ans = jesus.toJson(DiabeticUsr);
