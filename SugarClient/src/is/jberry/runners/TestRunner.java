@@ -20,11 +20,11 @@ public class TestRunner {
             System.out.println("YAY");
         }
 
-        CalendarService cal = CalendarServiceFactory.getCalanderService();
-        ArrayList<CalanderMeal> Listcal = new ArrayList<CalanderMeal>();
+       // CalendarService cal = CalendarServiceFactory.getCalanderService();
+        //ArrayList<CalanderMeal> Listcal = new ArrayList<CalanderMeal>();
         //Listcal = cal.getMealsByDay(1409356800);*/
 
-        Listcal = cal.getMealsByDay(1409261809);
+        //Listcal = cal.getMealsByDay(1409261809);
 
 
         //System.out.println("size: " + Listcal.size());
@@ -33,8 +33,8 @@ public class TestRunner {
         FoodTO banani = new FoodTO("banana", 20);
         matur.add(banani);
         boolean test = maltid.createMeal("BANANASALAT", matur);*/
-        System.out.println("Length: " + Listcal.size());
-        System.out.println("Else: " + Listcal);
+        /*System.out.println("Length: " + Listcal.size());
+        System.out.println("Else: " + Listcal);*/
 
 
         /*if(test == true)
