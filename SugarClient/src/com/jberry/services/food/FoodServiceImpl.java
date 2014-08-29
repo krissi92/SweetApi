@@ -143,6 +143,7 @@ public class FoodServiceImpl implements FoodService {
         }
         output = builder.toString();
         br.close();
+        System.out.println("Kaka: " + output);
         Gson jesus = new Gson();
         Food[] fud = jesus.fromJson(output ,Food[].class);
 

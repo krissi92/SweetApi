@@ -53,7 +53,7 @@ public class CalendarServiceImpl implements CalendarService {
         HttpResponse response = client.execute(request);
         BufferedReader br = new BufferedReader(
                 new InputStreamReader((response.getEntity().getContent())));
-        br.close();
+
 
         StringBuilder builder = new StringBuilder();
         String output;
@@ -61,7 +61,7 @@ public class CalendarServiceImpl implements CalendarService {
             builder.append(output);
         }
         output = builder.toString();
-
+        br.close();
         Gson jesus = new Gson();
         CalanderMeal[] cal = jesus.fromJson(output ,CalanderMeal[].class);
 
